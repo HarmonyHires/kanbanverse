@@ -8,7 +8,7 @@ export default {
     theme: {
         extend: {
             colors: {
-                'navy': '#2A8E9E',
+                navy: "#2A8E9E",
             },
         },
     },

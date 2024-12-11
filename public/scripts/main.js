@@ -1,3 +1,5 @@
+const { Swiper } = require("swiper");
+
 const backToTopBtn = document.getElementById("btn-back-to-top");
 
 const scrollFunction = () => {
@@ -17,3 +19,16 @@ const backToTop = () => {
 backToTopBtn.addEventListener("click", backToTop);
 
 window.addEventListener("scroll", scrollFunction);
+
+var swiper = new Swiper(".progress-slide-carousel", {
+    loop: true,
+    fraction: true,
+    autoplay: {
+        delay: 1200,
+        disableOnInteraction: false,
+    },
+    pagination: {
+        el: ".progress-slide-carousel .swiper-pagination",
+        type: "progressbar",
+    },
+});

@@ -13,7 +13,7 @@ body {
 }
 
 .includes-bg-hero {
-    background-image: url('../images/bg_hero.webp');
+    background-image: url("../images/bg_hero.webp");
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -30,4 +30,16 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
+}
+
+.swiper-wrapper {
+    width: 100%;
+    height: max-content !important;
+    padding-bottom: 52px !important;
+    -webkit-transition-timing-function: linear !important;
+    transition-timing-function: linear !important;
+    position: relative;
+}
+.swiper-pagination-progressbar .swiper-pagination-progressbar-fill {
+    background: #ffff !important;
 }

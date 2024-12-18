@@ -3,6 +3,7 @@
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\MidtransController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -23,7 +24,7 @@ Route::controller(LoginController::class)->group(function () {
     Route::post('login', 'login')->name('auth.login');
 });
 
-Route::controller(RegisterController::class)->group(function () {
+Route::controller(RegisterController::class)->group(callback: function () {
     Route::get('register', 'index')->name('register');
     Route::post('register', 'register')->name('auth.register');
 });
@@ -33,4 +34,6 @@ Route::middleware('auth')->group(function () {
 
     Route::get('logout', [LoginController::class, 'logout'])->name('auth.logout');
 });
-    
+
+Route::get('/midtrans/test', [MidtransController::class, 'index'])->name('midtrans.test');
+Route::post('/midtrans/payment', [MidtransController::class, 'createTransaction'])->name('midtrans.payment');

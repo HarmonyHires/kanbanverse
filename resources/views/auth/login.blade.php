@@ -1,116 +1,66 @@
 @extends('layouts.app')
 
+@section('title', 'Login')
+
 @section('content')
-    <link href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" rel="stylesheet" />
     <div class="flex h-screen">
-        <div class="w-2/5 h-full bg-dark_navy px-8 py-6">
+        <div class="w-1/2 h-full bg-dark_navy px-20 py-6 flex flex-col justify-center items-center">
             <a href="{{ route('home') }}">
-                <img class="object-contain w-52" src="{{ asset('images/logo.png') }}" alt="logo">
+                <img class="object-contain w-72" src="{{ asset('images/logos.svg') }}" alt="logo">
             </a>
-            <div class="mt-32 mb-20">
-                <h1 class="text-white text-5xl font-bold leading-normal mb-3">Time Management <br> Made Easy <br> Experience
-                    the <br> Kanban Advantage!</h1>
-                <p class="text-gray-200 text-base">With Kanban, our project design becomes more structured and easier to
-                    monitor. Every stage of design, from concept to final, becomes clearer.</p>
-            </div>
 
-            <div class="w-full">
-                <div class="swiper progress-slide-carousel swiper-container relative">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide">
-                            <div class="bg-navy relative mx-8 p-8 rounded-xl">
-                                <h5 class="text-white text-xl mb-3 font-semibold">Ez Project Bosqu</h5>
-                                <p class="mb-4 text-gray-100 font-light">Before using Kanban, I was often overwhelmed by the
-                                    number of
-                                    tasks. Now, with Kanban, I can clearly see what I have to do and its priority. My
-                                    productivity has increased dramatically.</p>
+            <div class="w-full mt-12">
+                <div class="mb-6 w-full">
+                    <label class="font-medium text-white mb-3" for="email">
+                        Email
+                    </label>
+                    <input
+                        class="shadow text-white appearance-none bg-transparent border mt-2 rounded w-full py-4 px-3 leading-tight focus:outline-none focus:shadow-outline"
+                        id="email" type="email" placeholder="email@example.com">
+                </div>
 
-                                <div class="flex justify-between">
-                                    <div class="flex gap-3 items-center">
-                                        <div class="bg-gray-400 w-8 h-8 rounded-full"></div>
-                                        <span class="text-white">Satya Garda Prasetyo</span>
-                                    </div>
-                                    <p>⭐⭐⭐⭐⭐</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="bg-navy relative mx-8 p-8 rounded-xl">
-                                <h5 class="text-white text-xl mb-3 font-semibold">WOW Amazing Project Saya Kelarr</h5>
-                                <p class="mb-4 text-gray-100 font-light">Before using Kanban, I was often overwhelmed by the
-                                    number of
-                                    tasks. Now, with Kanban, I can clearly see what I have to do and its priority. My
-                                    productivity has increased dramatically.</p>
+                <div class="mb-6 w-full">
+                    <label class="font-medium text-white mb-3" for="password">
+                        Password
+                    </label>
+                    <input
+                        class="shadow text-white appearance-none bg-transparent border mt-2 rounded w-full py-4 px-3 leading-tight focus:outline-none focus:shadow-outline"
+                        id="password" type="password" placeholder="Password">
+                </div>
 
-                                <div class="flex justify-between">
-                                    <div class="flex gap-3 items-center">
-                                        <div class="bg-gray-400 w-8 h-8 rounded-full"></div>
-                                        <span class="text-white">Kevien Nathallio Antonio</span>
-                                    </div>
-                                    <p>⭐⭐⭐⭐⭐</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="bg-navy relative mx-8 p-8 rounded-xl">
-                                <h5 class="text-white text-xl mb-3 font-semibold">I Love This Thing</h5>
-                                <p class="mb-4 text-gray-100 font-light">Before using Kanban, I was often overwhelmed by the
-                                    number of
-                                    tasks. Now, with Kanban, I can clearly see what I have to do and its priority. My
-                                    productivity has increased dramatically.</p>
-
-                                <div class="flex justify-between">
-                                    <div class="flex gap-3 items-center">
-                                        <div class="bg-gray-400 w-8 h-8 rounded-full"></div>
-                                        <span class="text-white">El Raffael</span>
-                                    </div>
-                                    <p>⭐⭐⭐⭐⭐</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="bg-navy relative mx-8 p-8 rounded-xl">
-                                <h5 class="text-white text-xl mb-3 font-semibold">I Love This Thing</h5>
-                                <p class="mb-4 text-gray-100 font-light">Before using Kanban, I was often overwhelmed by the
-                                    number of
-                                    tasks. Now, with Kanban, I can clearly see what I have to do and its priority. My
-                                    productivity has increased dramatically.</p>
-
-                                <div class="flex justify-between">
-                                    <div class="flex gap-3 items-center">
-                                        <div class="bg-gray-400 w-8 h-8 rounded-full"></div>
-                                        <span class="text-white">Dimas Ari Eka</span>
-                                    </div>
-                                    <p>⭐⭐⭐⭐⭐</p>
-                                </div>
-                            </div>
-                        </div>
+                <div class="flex justify-between items-center mb-6">
+                    <div class="flex items
+                    -center">
+                        <input class="mr-2" type="checkbox" id="remember">
+                        <label class="text-white
+                        cursor-pointer" for="remember">
+                            Remember me
+                        </label>
                     </div>
-                    <div class="swiper-pagination !bottom-2 !top-auto !w-80 right-0 mx-auto"></div>
+                    <a class="text-white
+                    cursor-pointer" href="">
+                        Forgot password?
+                    </a>
+                </div>
+
+                <button class="w-full mb-6 bg-white text-black py-4 px-6 rounded font-medium focus:outline-none focus:shadow-outline">
+                    Login
+                </button>
+
+                <div class="mt-6 text-center">
+                    <span class="text-white
+                    ">Don't have an account?</span>
+                    <a class="text-navy
+                    font-medium" href="{{ route('register') }}">
+                        Register
+                    </a>
                 </div>
             </div>
         </div>
-        <div class="w-3/5 p-16">
-            <h1 class="text-2xl font-semibold mb-12">Plan better. Work smarter. <br><span class="text-gray-300">Access your Kanbanverse account today.</span></h1>
-
-            <h1 class="text-4xl font-semibold">Log in to your Kanbanverse account</h1>
+        <div class="w-1/2 h-full px-8 py-6 flex flex-col justify-center items-center">
+            <img src="{{ asset('images/bg_login.webp') }}" alt="bg_login">
+            <h2 class="text-dark_navy text-4xl font-semibold mb-3">KanbanVerse</h2>
+            <p class="text-center text-dark_navy text-xl">Time Management Made Easy Experience the <br> Kanban Advantage!</p>
         </div>
     </div>
-
-
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script>
-        new Swiper(".progress-slide-carousel", {
-            loop: true,
-            fraction: true,
-            autoplay: {
-                delay: 1500,
-                disableOnInteraction: false,
-            },
-            pagination: {
-                el: ".progress-slide-carousel .swiper-pagination",
-                type: "progressbar",
-            },
-        });
-    </script>
 @endsection

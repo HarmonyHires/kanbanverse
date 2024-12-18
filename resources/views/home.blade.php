@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('title', 'Solution Management Project')
+
 @section('content')
     <div class="includes-bg-hero relative">
         <div class="bg-hero-overlay">

@@ -693,6 +693,14 @@
       'secret' => '',
       'region' => 'us-east-1',
     ),
+    'midtrans' => 
+    array (
+      'serverKey' => 'SB-Mid-server-KcgWPcZTOeQBSkKun6GH_2--',
+      'clientKey' => 'SB-Mid-client-A24N892LyQGFLb16',
+      'isProduction' => false,
+      'isSanitized' => true,
+      'is3ds' => true,
+    ),
   ),
   'session' => 
   array (

@@ -44,7 +44,7 @@
     <meta property="og:locale:alternate" content="id_ID">
 
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>KanbanVerse | Solution Management Project</title>
+    <title>KanbanVerse | @yield('title')</title>
 
     @vite('resources/css/app.css')
     <link rel="stylesheet" href="{{ asset('styles/home.css') }}">

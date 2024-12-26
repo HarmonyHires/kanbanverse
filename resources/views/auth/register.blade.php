@@ -5,7 +5,7 @@
 @section('content')
     <link href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" rel="stylesheet" />
 
-    <div class="flex h-screen">
+    <div class="flex h-screen justify-center items-center">
         <div class="w-2/5 h-full bg-dark_navy px-8 py-6">
             <a href="{{ route('home') }}">
                 <img class="object-contain w-52" src="{{ asset('images/logo.png') }}" alt="logo">
@@ -94,7 +94,9 @@
             </div>
         </div>
 
-        <div class="w-3/5 p-16">
+        <form action="{{ route('auth.register') }}" method="POST" enctype="multipart/form-data" class="w-3/5 p-16">
+            @csrf
+
             <h1 class="text-2xl font-semibold mb-12">Plan better. Work smarter. <br><span class="text-gray-300">Access your
                     Kanbanverse account today.</span></h1>
 
@@ -106,16 +108,24 @@
                         First Name
                     </label>
                     <input
-                        class="shadow appearance-none bg-transparent border mt-2 rounded w-full py-4 px-3 leading-tight focus:outline-none focus:shadow-outline"
-                        id="first_name" type="email" placeholder="First Name">
+                        class="shadow appearance-none bg-transparent border mt-2 rounded w-full py-4 px-3 leading-tight focus:outline-none focus:shadow-outline @error('first_name') border-red-500 @enderror"
+                        id="first_name" type="text" name="first_name" placeholder="First Name">
+
+                    @error('first_name')
+                        <div class="text-red-500 text-sm mt-2">{{ $message }}</div>
+                    @enderror
                 </div>
                 <div class="mb-4 w-full">
                     <label class="font-medium mb-3" for="last_name">
                         Last Name
                     </label>
                     <input
-                        class="shadow appearance-none bg-transparent border mt-2 rounded w-full py-4 px-3 leading-tight focus:outline-none focus:shadow-outline"
-                        id="last_name" type="email" placeholder="Last Name">
+                        class="shadow appearance-none bg-transparent border mt-2 rounded w-full py-4 px-3 leading-tight focus:outline-none focus:shadow-outline @error('last_name') border-red-500 @enderror"
+                        id="last_name" type="text" name="last_name" placeholder="Last Name">
+
+                    @error('last_name')
+                        <div class="text-red-500 text-sm mt-2">{{ $message }}</div>
+                    @enderror
                 </div>
             </div>
 
@@ -124,8 +134,12 @@
                     Email
                 </label>
                 <input
-                    class="shadow appearance-none bg-transparent border mt-2 rounded w-full py-4 px-3 leading-tight focus:outline-none focus:shadow-outline"
-                    id="email" type="email" placeholder="email@example.com">
+                    class="shadow appearance-none bg-transparent border mt-2 rounded w-full py-4 px-3 leading-tight focus:outline-none focus:shadow-outline @error('email') border-red-500 @enderror"
+                    id="email" type="email" name="email" placeholder="email@example.com">
+
+                @error('email')
+                    <div class="text-red-500 text-sm mt-2">{{ $message }}</div>
+                @enderror
             </div>
 
             <div class="mb-4 w-full">
@@ -133,22 +147,17 @@
                     Password
                 </label>
                 <input
-                    class="shadow appearance-none bg-transparent border mt-2 rounded w-full py-4 px-3 leading-tight focus:outline-none focus:shadow-outline"
-                    id="password" type="password" placeholder="Password">
-            </div>
+                    class="shadow appearance-none bg-transparent border mt-2 rounded w-full py-4 px-3 leading-tight focus:outline-none focus:shadow-outline @error('password') border-red-500 @enderror"
+                    id="password" type="password" name="password" placeholder="Password">
 
-            <div class="mb-6 w-full">
-                <label class="font-medium mb-3" for="confirm_password">
-                    Confirm Password
-                </label>
-                <input
-                    class="shadow appearance-none bg-transparent border mt-2 rounded w-full py-4 px-3 leading-tight focus:outline-none focus:shadow-outline"
-                    id="confirm_password" type="password" placeholder="Confirm Password">
+                @error('password')
+                    <div class="text-red-500 text-sm mt-2">{{ $message }}</div>
+                @enderror
             </div>
 
             <div class="flex items-start">
-                <input id="agree" type="checkbox"
-                    class="w-4 h-4 text-blue-500 border-gray-300 rounded focus:ring-blue-500" />
+                <input id="agree" name="t&c" type="checkbox"
+                    class="w-4 h-4 text-blue-500 border-gray-300 rounded focus:ring-blue-500 @error('t&c') border-red-500 @enderror">
                 <label for="agree" class="ml-2 -mt-[3px]">
                     <p class="text-blue-gray-500 flex font-medium">
                         I agree with the
@@ -159,9 +168,11 @@
                     </p>
                 </label>
             </div>
+            @error('t&c')
+                <div class="text-red-500 text-sm mt-2">{{ $message }}</div>
+            @enderror
 
-
-            <button
+            <button type="submit"
                 class="bg-dark_navy transition-all text-white font-bold py-4 px-8 rounded w-full mt-8 focus:outline-none focus:shadow-outline">
                 Register
             </button>
@@ -170,8 +181,7 @@
                 <p class="text-gray-500">Already have an account? <a href="{{ route('login') }}"
                         class="text-blue-500 font-semibold">Login</a></p>
             </div>
-        </div>
-
+        </form>
 
         <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
         <script>

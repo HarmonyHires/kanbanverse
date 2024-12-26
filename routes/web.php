@@ -21,18 +21,20 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 
 Route::controller(LoginController::class)->group(function () {
     Route::get('login', 'index')->name('login');
-    Route::post('login', 'login')->name('auth.login');
+    Route::post('login', 'store')->name('auth.login');
 });
 
 Route::controller(RegisterController::class)->group(callback: function () {
     Route::get('register', 'index')->name('register');
-    Route::post('register', 'register')->name('auth.register');
+    Route::post('register', 'store')->name('auth.register');
 });
 
 Route::middleware('auth')->group(function () {
-    Route::get('dashboard', [HomeController::class, 'dashboard'])->name('dashboard');
+    Route::prefix('backsite')->group(function () {
+        Route::get('dashboard', [HomeController::class, 'dashboard'])->name('dashboard');
+    });
 
-    Route::get('logout', [LoginController::class, 'logout'])->name('auth.logout');
+    Route::post('logout', [LoginController::class, 'logout'])->name('logout');
 });
 
 Route::get('/midtrans/test', [MidtransController::class, 'index'])->name('midtrans.test');

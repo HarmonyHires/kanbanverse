@@ -102,7 +102,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::qDrmBih7kqWJEdnK',
+            '_route' => 'generated::SMIdW6aySYXNkhSB',
           ),
           1 => NULL,
           2 => 
@@ -208,7 +208,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      '/dashboard' => 
+      '/backsite/dashboard' => 
       array (
         0 => 
         array (
@@ -234,13 +234,12 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'auth.logout',
+            '_route' => 'logout',
           ),
           1 => NULL,
           2 => 
           array (
-            'GET' => 0,
-            'HEAD' => 1,
+            'POST' => 0,
           ),
           3 => NULL,
           4 => false,
@@ -444,7 +443,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::qDrmBih7kqWJEdnK' => 
+    'generated::SMIdW6aySYXNkhSB' => 
     array (
       'methods' => 
       array (
@@ -461,13 +460,13 @@ app('router')->setCompiledRoutes(
         ),
         'uses' => 'O:55:"Laravel\\SerializableClosure\\UnsignedSerializableClosure":1:{s:12:"serializable";O:46:"Laravel\\SerializableClosure\\Serializers\\Native":5:{s:3:"use";a:0:{}s:8:"function";s:77:"function (\\Illuminate\\Http\\Request $request) {
     return $request->user();
-}";s:5:"scope";s:37:"Illuminate\\Routing\\RouteFileRegistrar";s:4:"this";N;s:4:"self";s:32:"000000000000052a0000000000000000";}}',
+}";s:5:"scope";s:37:"Illuminate\\Routing\\RouteFileRegistrar";s:4:"this";N;s:4:"self";s:32:"00000000000005410000000000000000";}}',
         'namespace' => NULL,
         'prefix' => 'api',
         'where' => 
         array (
         ),
-        'as' => 'generated::qDrmBih7kqWJEdnK',
+        'as' => 'generated::SMIdW6aySYXNkhSB',
       ),
       'fallback' => false,
       'defaults' => 
@@ -570,8 +569,8 @@ app('router')->setCompiledRoutes(
         array (
           0 => 'web',
         ),
-        'uses' => 'App\\Http\\Controllers\\Auth\\LoginController@login',
-        'controller' => 'App\\Http\\Controllers\\Auth\\LoginController@login',
+        'uses' => 'App\\Http\\Controllers\\Auth\\LoginController@store',
+        'controller' => 'App\\Http\\Controllers\\Auth\\LoginController@store',
         'namespace' => NULL,
         'prefix' => '',
         'where' => 
@@ -643,8 +642,8 @@ app('router')->setCompiledRoutes(
         array (
           0 => 'web',
         ),
-        'uses' => 'App\\Http\\Controllers\\Auth\\RegisterController@register',
-        'controller' => 'App\\Http\\Controllers\\Auth\\RegisterController@register',
+        'uses' => 'App\\Http\\Controllers\\Auth\\RegisterController@store',
+        'controller' => 'App\\Http\\Controllers\\Auth\\RegisterController@store',
         'namespace' => NULL,
         'prefix' => '',
         'where' => 
@@ -673,7 +672,7 @@ app('router')->setCompiledRoutes(
         0 => 'GET',
         1 => 'HEAD',
       ),
-      'uri' => 'dashboard',
+      'uri' => 'backsite/dashboard',
       'action' => 
       array (
         'middleware' => 
@@ -684,7 +683,7 @@ app('router')->setCompiledRoutes(
         'uses' => 'App\\Http\\Controllers\\HomeController@dashboard',
         'controller' => 'App\\Http\\Controllers\\HomeController@dashboard',
         'namespace' => NULL,
-        'prefix' => '',
+        'prefix' => '/backsite',
         'where' => 
         array (
         ),
@@ -704,12 +703,11 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'auth.logout' => 
+    'logout' => 
     array (
       'methods' => 
       array (
-        0 => 'GET',
-        1 => 'HEAD',
+        0 => 'POST',
       ),
       'uri' => 'logout',
       'action' => 
@@ -726,7 +724,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'auth.logout',
+        'as' => 'logout',
       ),
       'fallback' => false,
       'defaults' => 

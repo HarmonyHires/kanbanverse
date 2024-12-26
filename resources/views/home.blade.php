@@ -40,12 +40,12 @@
                         <a class="px-10 py-3 border rounded-md text-sm font-medium text-white
                     hover:bg-white hover:text-black transition duration-300"
                             href="{{ route('login') }}">
-                            Sign In
+                            Login
                         </a>
                         <a class="px-10 py-3 border rounded-md text-sm font-medium text-black bg-white
                 hover:bg-transparent hover:text-white"
                             href="{{ route('register') }}">
-                            Sign Up
+                            Register
                         </a>
                     @else
                         <a class="px-10 py-3 border rounded-md text-sm font-medium text-white
@@ -112,7 +112,7 @@
                     ultimate visual
                     tool for organizing tasks and streamlining workflows.</p>
                 <a class="lg:px-8 lg:py-4 px-4 py-3 border rounded-md text-black text-sm font-medium bg-white hover:bg-transparent hover:text-white"
-                    href="#">Get Started</a>
+                    href="#pricing">Get Started</a>
             </div>
 
         </div>
@@ -156,7 +156,7 @@
                 </div>
                 <div class="flex justify-content-between items-center gap-3 mt-4">
                     <a class="px-4 lg:px-10 py-2 lg:py-3 border rounded-md text-sm font-medium text-white bg-navy hover:scale-110 transition duration-300"
-                        href="#">Start Free Trial</a>
+                        href="#pricing">Start Free Trial</a>
                     <a class="px-4 lg:px-10 py-2 lg:py-3 border rounded-md text-black text-sm font-medium bg-white hover:bg-transparent"
                         href="#">Learn More</a>
                 </div>
@@ -347,7 +347,7 @@
                 </div>
                 <div class="flex justify-content-between items-center gap-3 mt-4">
                     <a class="lg:px-10 px-4 py-3 lg:py-3 border rounded-md text-sm font-medium text-white bg-navy hover:scale-110 transition duration-300"
-                        href="">Start Free Trial</a>
+                        href="#pricing">Start Free Trial</a>
                     <a class="lg:px-10 px-4 py-3 lg:py-3 border rounded-md text-black text-sm font-medium bg-white hover:bg-transparent"
                         href="">Learn More</a>
                 </div>

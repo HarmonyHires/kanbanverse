@@ -44,6 +44,7 @@
       23 => 'App\\Providers\\AuthServiceProvider',
       24 => 'App\\Providers\\EventServiceProvider',
       25 => 'App\\Providers\\RouteServiceProvider',
+      26 => 'Spatie\\Permission\\PermissionServiceProvider',
     ),
     'aliases' => 
     array (
@@ -589,6 +590,46 @@
       array (
         0 => 'C:\\Users\\Sattya\\Downloads\\Kuliah\\Semester 3\\Aplication Project 1\\KanbanVerse\\resources\\views/vendor/mail',
       ),
+    ),
+  ),
+  'permission' => 
+  array (
+    'models' => 
+    array (
+      'permission' => 'Spatie\\Permission\\Models\\Permission',
+      'role' => 'Spatie\\Permission\\Models\\Role',
+    ),
+    'table_names' => 
+    array (
+      'roles' => 'roles',
+      'permissions' => 'permissions',
+      'model_has_permissions' => 'model_has_permissions',
+      'model_has_roles' => 'model_has_roles',
+      'role_has_permissions' => 'role_has_permissions',
+    ),
+    'column_names' => 
+    array (
+      'role_pivot_key' => NULL,
+      'permission_pivot_key' => NULL,
+      'model_morph_key' => 'model_id',
+      'team_foreign_key' => 'team_id',
+    ),
+    'register_permission_check_method' => true,
+    'register_octane_reset_listener' => false,
+    'teams' => false,
+    'use_passport_client_credentials' => false,
+    'display_permission_in_exception' => false,
+    'display_role_in_exception' => false,
+    'enable_wildcard_permission' => false,
+    'cache' => 
+    array (
+      'expiration_time' => 
+      \DateInterval::__set_state(array(
+         'from_string' => true,
+         'date_string' => '24 hours',
+      )),
+      'key' => 'spatie.permission.cache',
+      'store' => 'default',
     ),
   ),
   'queue' => 

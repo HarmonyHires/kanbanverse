@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
+use App\Http\Controllers\Backsite\PlanController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\MidtransController;
 use Illuminate\Support\Facades\Route;
@@ -32,6 +33,10 @@ Route::controller(RegisterController::class)->group(callback: function () {
 Route::middleware('auth')->group(function () {
     Route::prefix('backsite')->group(function () {
         Route::get('dashboard', [HomeController::class, 'dashboard'])->name('dashboard');
+        Route::resource('subscription-plan', PlanController::class);
+        Route::get('subscription-plan/{id}/features', [PlanController::class, 'features'])->name('subscription-plan.features');
+        Route::post('subscription-plan/{id}/features', [PlanController::class, 'storeFeatures'])->name('subscription-plan.store-features');
+        Route::delete('subscription-plan/{id}/features/{feature_id}', [PlanController::class, 'destroyFeature'])->name('subscription-plan.delete-feature');
     });
 
     Route::post('logout', [LoginController::class, 'logout'])->name('logout');

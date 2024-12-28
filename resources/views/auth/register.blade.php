@@ -198,4 +198,5 @@
                 },
             });
         </script>
-    @endsection
+    </div>
+@endsection

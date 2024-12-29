@@ -4,7 +4,7 @@
 
 @section('content')
     <div class="flex justify-between items-center">
-        <h2 class="text-xl font-semibold text-gray-800">Add Features to {{ $plan->name_plan }}</h2>
+        <h2 class="text-2xl font-semibold text-gray-800">Add Features to {{ $plan->name_plan }}</h2>
         <a href="{{ route('subscription-plan.index') }}"
             class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Back</a>
     </div>
@@ -33,7 +33,7 @@
         </div>
     @endif
 
-    <table>
+    <table class="mt-6">
         <thead>
             <tr class="bg-gray-200 text-gray-600 uppercase text-sm leading-normal">
                 <th class="py-3 px-6 text-left">No</th>

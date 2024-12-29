@@ -241,96 +241,69 @@
             </div>
 
             <div class="flex justify-center mx-auto items-center gap-10 lg:gap-[150px] h-full flex-col lg:flex-row">
-                <div class="bg-white border border-gray-200 p-8 w-80">
-                    <img src="{{ asset('images/starter_icon.webp') }}" alt="">
-                    <h5 class="text-md lg:text-xl mt-6 font-semibold mb-3">Starter Plan</h5>
-                    <p class="text-gray-600 text-sm mb-3">Perfect for individuals or small teams getting
-                        started with task management</p>
-                    <h1 class="mb-4 font-bold text-2xl">FREE</h1>
-                    <hr class="mb-8">
+                @forelse($plans as $plan)
+                    @if ($plan->isBest == 1)
+                        <form method="GET" action="{{ route('subscribe') }}" class="scale-105" target="_blank">
+                            <input type="hidden" name="type" value="{{ $plan->slug }}">
 
-                    <div class="flex gap-3">
-                        <img class="w-5 object-contain mb-3" src="{{ asset('images/ceklis_pricing.webp') }}"
-                            alt="icon_ceklis">
-                        <p class="font-medium text-sm">Task Management tools</p>
-                    </div>
-                    <div class="flex gap-3">
-                        <img class="w-5 object-contain mb-3" src="{{ asset('images/ceklis_pricing.webp') }}"
-                            alt="icon_ceklis">
-                        <p class="font-medium text-sm">Team Collaboration</p>
-                    </div>
-                    <div class="flex gap-3 mb-6">
-                        <img class="w-5 object-contain mb-3" src="{{ asset('images/ceklis_pricing.webp') }}"
-                            alt="icon_ceklis">
-                        <p class="font-medium text-sm">Basic Project Tracking</p>
-                    </div>
+                            <div class="text-center bg-navy w-80 rounded-t-lg text-white text-sm py-1">Best Value</div>
+                            <div class="bg-white border border-gray-200 p-8 w-80">
+                                <img src="{{ $plan->icon }}" alt="{{ $plan->name_plan }}">
+                                <h5 class="text-md lg:text-xl mt-6 font-semibold mb-3">{{ $plan->name_plan }}</h5>
+                                <p class="text-gray-600 text-sm mb-3">{{ $plan->description }}</p>
+                                <h1 class="mb-4 font-bold text-2xl"><span
+                                        class="text-2xl">{{ $plan->price == 'Rp 0' ? 'FREE' : $plan->price }}</span>
+                                    @if ($plan->price != 'Rp 0')
+                                        <span class="text-gray-600 text-sm font-normal italic">/month</span>
+                                    @endif
+                                </h1>
+                                <hr class="mb-8">
 
-                    <a class="bg-navy text-sm text-white hover:scale-105 transition duration-300 text-center py-3 flex mx-auto items-center align-middle justify-center rounded font-medium"
-                        href="#">Choose Plan</a>
-                </div>
+                                @foreach ($plan->features as $feature)
+                                    <div class="flex gap-3">
+                                        <img class="w-5 object-contain mb-3"
+                                            src="{{ asset('images/ceklis_pricing.webp') }}" alt="icon_ceklis">
+                                        <p class="font-medium text-sm">{{ $feature->name }}</p>
+                                    </div>
+                                @endforeach
 
-                <div class="scale-105">
-                    <div class="text-center bg-navy w-80 rounded-t-lg text-white text-sm py-1">Best Value</div>
-                    <div class="bg-white border-s border-b border-r border-gray-200 p-8 w-80">
-                        <img src="{{ asset('images/pro_icon.webp') }}" alt="">
-                        <h5 class="text-md lg:text-xl mt-6 font-semibold mb-3">Pro Plan</h5>
-                        <p class="text-gray-600 text-sm mb-3">Helping your teams growing and that need advanced
-                            features
-                            and flexibilty</p>
-                        <h1 class="mb-4"><span class="font-bold text-2xl">$15</span> <span
-                                class="text-gray-600 text-sm">/
-                                month</span></h1>
-                        <hr class="mb-8">
+                                <button type="submit" class="bg-navy hover:scale-105 w-full mt-6 transition duration-300 text-white text-center py-3 flex mx-auto gap-3 items-center align-middle justify-center rounded font-medium text-sm"><img
+                                        src="{{ asset('images/star_pricing.webp') }}" alt="">Choose Plan</button>
+                            </div>
+                        </form>
+                    @else
+                        <form action="{{ route('subscribe') }}" target="_blank" class="bg-white border border-gray-200 p-8 w-80">
+                            <input type="hidden" name="type" value="{{ $plan->slug }}">
 
-                        <div class="flex gap-3">
-                            <img class="w-5 object-contain mb-3" src="{{ asset('images/ceklis_pricing.webp') }}"
-                                alt="icon_ceklis">
-                            <p class="font-medium text-sm">Everything in Starter Plan</p>
-                        </div>
-                        <div class="flex gap-3">
-                            <img class="w-5 object-contain mb-3" src="{{ asset('images/ceklis_pricing.webp') }}"
-                                alt="icon_ceklis">
-                            <p class="font-medium text-sm">Team Up to 10 people </p>
-                        </div>
-                        <div class="flex gap-3 mb-6">
-                            <img class="w-5 object-contain mb-3" src="{{ asset('images/ceklis_pricing.webp') }}"
-                                alt="icon_ceklis">
-                            <p class="font-medium text-sm">Advanced Project Tracking</p>
-                        </div>
+                            <img src="{{ $plan->icon }}" alt="{{ $plan->name_plan }}">
+                            <h5 class="text-md lg:text-xl mt-6 font-semibold mb-3">
+                                {{ $plan->name_plan }}</h5>
+                            <p class="text-gray-600 text-sm mb-3">{{ $plan->description }}</p>
+                            <h1 class="mb-4">
+                                <span
+                                    class="font-bold text-2xl">{{ $plan->price == 'Rp 0' ? 'FREE' : $plan->price }}</span>
+                                @if ($plan->price != 'Rp 0')
+                                    <span class="text-gray-600 text-sm font-normal italic">/month</span>
+                                @endif
+                            </h1>
+                            <hr class="mb-8">
 
-                        <a class="bg-navy hover:scale-105 transition duration-300 text-white text-center py-3 flex mx-auto gap-3 items-center align-middle justify-center rounded font-medium text-sm"
-                            href="#"><img src="{{ asset('images/star_pricing.webp') }}" alt="">Choose
-                            Plan</a>
+                            @foreach ($plan->features as $feature)
+                                <div class="flex gap-3">
+                                    <img class="w-5 object-contain mb-3" src="{{ asset('images/ceklis_pricing.webp') }}"
+                                        alt="icon_ceklis">
+                                    <p class="font-medium text-sm">{{ $feature->name }}</p>
+                                </div>
+                            @endforeach
+
+                            <button type="submit" class="bg-navy w-full text-white hover:scale-105 mt-6 transition duration-300 text-center py-3 flex mx-auto gap-3 items-center align-middle justify-center rounded font-medium text-sm">Choose Plan</button>
+                        </form>
+                    @endif
+                @empty
+                    <div class="bg-white border border-gray-200 p-8 w-80">
+                        <p>Empty Plans.</p>
                     </div>
-                </div>
-                <div class="bg-white border border-gray-200 p-8 w-80">
-                    <img src="{{ asset('images/entrprise_icon.webp') }}" alt="">
-                    <h5 class="text-md lg:text-xl mt-6 font-semibold mb-3">Enterprise Plan</h5>
-                    <p class="text-gray-600 text-sm mb-3">Best for large teams and enterprises with multple projects
-                        and complex workflows</p>
-                    <h1 class="mb-4"><span class="font-bold text-2xl">$30</span> <span class="text-gray-600 text-sm">/
-                            month</span></h1>
-                    <hr class="mb-8">
-
-                    <div class="flex gap-3">
-                        <img class="w-5 object-contain mb-3" src="{{ asset('images/ceklis_pricing.webp') }}"
-                            alt="icon_ceklis">
-                        <p class="font-medium text-sm">Everything on Pro Plan</p>
-                    </div>
-                    <div class="flex gap-3">
-                        <img class="w-5 object-contain mb-3" src="{{ asset('images/ceklis_pricing.webp') }}"
-                            alt="icon_ceklis">
-                        <p class="font-medium text-sm">Analysis Team Insight</p>
-                    </div>
-                    <div class="flex gap-3 mb-6">
-                        <img class="w-5 object-contain mb-3" src="{{ asset('images/ceklis_pricing.webp') }}"
-                            alt="icon_ceklis">
-                        <p class="font-medium text-sm">Super Project Tracking</p>
-                    </div>
-
-                    <a class="bg-navy text-white hover:scale-105 transition duration-300 text-center py-3 flex mx-auto gap-3 items-center align-middle justify-center rounded font-medium text-sm"
-                        href="#">Choose Plan</a>
-                </div>
+                @endforelse
             </div>
         </div>
 

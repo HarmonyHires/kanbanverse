@@ -3,7 +3,9 @@
 
     <!-- logo -->
     <div class="flex-none w-56 flex flex-row items-center gap-3">
-        <img src="{{ asset('images/logo_back.png') }}" class="w-40 -mt-2 flex-none">
+        <a href="{{ route('home') }}">
+            <img src="{{ asset('images/logo_back.png') }}" class="w-40 -mt-2 flex-none">
+        </a>
 
         <button id="sliderBtn" class="flex-none text-right text-gray-900 hidden md:block">
             <i class="fad fa-list-ul"></i>

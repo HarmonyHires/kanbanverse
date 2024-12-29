@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('icon')->nullable();
             $table->string('name_plan');
+            $table->string('slug');
             $table->text('description');
             $table->decimal('price', 8, 2)->nullable();
             $table->integer('duration');

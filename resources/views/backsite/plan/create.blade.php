@@ -3,19 +3,8 @@
 @section('title', 'Create Subscription Plan')
 
 @section('content')
-    @if ($errors->any())
-        <div class="mt-4">
-            <div class="font-medium text-red-600">Whoops! Something went wrong.</div>
-            <ul class="mt-2 list-disc list-inside text-sm text-red-600">
-                @foreach ($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                @endforeach
-            </ul>
-        </div>
-    @endif
-
     <div class="flex justify-between items-center">
-        <h2 class="text-xl font-semibold text-gray-800">Create Subscription Plan</h2>
+        <h2 class="text-2xl font-semibold text-gray-800">Create Subscription Plan</h2>
         <a href="{{ route('subscription-plan.index') }}"
             class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Back</a>
     </div>
@@ -41,37 +30,71 @@
                 <div>
                     <label for="name_plan" class="block text-sm font-medium text-gray-700">Name Plan</label>
                     <input type="text" name="name_plan" id="name_plan" autocomplete="off"
-                        class="mt-1 focus:ring-blue-500 py-2 px-3 focus:border-blue-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" placeholder="Basic">
+                        class="mt-1 focus:ring-blue-500 py-2 px-3 @error('name_plan') border-red-500 @enderror focus:border-blue-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
+                        placeholder="Basic">
+
+                    @error('name_plan')
+                        <span class="text-red-500 text-sm">{{ $message }}</span>
+                    @enderror
                 </div>
 
                 <div>
                     <label for="description" class="block text-sm font-medium text-gray-700">Description</label>
                     <textarea name="description" id="description" autocomplete="off"
-                        class="mt-1 focus:ring-blue-500 py-2 px-3 focus:border-blue-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" placeholder="Description"></textarea>
+                        class="mt-1 focus:ring-blue-500 py-2 px-3 focus:border-blue-500 block w-full @error('description') border-red-500 @enderror shadow-sm sm:text-sm border-gray-300 rounded-md"
+                        placeholder="Description"></textarea>
+
+                    @error('description')
+                        <span class="text-red-500 text-sm">{{ $message }}</span>
+                    @enderror
                 </div>
 
                 <div>
-                    <label for="price" class="block text-sm font-medium text-gray-700">Price</label>
-                    <input type="text" inputmode="numeric" oninput="this.value = this.value.replace(/[^0-9]/g, '')" name="price" id="price" autocomplete="off"
-                        class="mt-1 focus:ring-blue-500 py-2 px-3 focus:border-blue-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" placeholder="100000">
+                    <label for="price"
+                        class="block text-sm font-medium text-gray-700 @error('price') text-red-500 @enderror">Price</label>
+                    <input type="text" inputmode="numeric" oninput="this.value = this.value.replace(/[^0-9]/g, '')"
+                        name="price" id="price" autocomplete="off" value="0"
+                        class="mt-1 focus:ring-blue-500 py-2 px-3 focus:border-blue-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
+                        placeholder="100000">
+
+                    @error('price')
+                        <span class="text-red-500 text-sm">{{ $message }}</span>
+                    @enderror
                 </div>
                 <div>
-                    <label for="duration" class="block text-sm font-medium text-gray-700">Duration</label>
-                    <input type="text" inputmode="numeric" oninput="this.value = this.value.replace(/[^0-9]/g, '')" name="duration" id="duration" autocomplete="off"
-                        class="mt-1 focus:ring-blue-500 py-2 px-3 focus:border-blue-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" placeholder="30">
+                    <label for="duration"
+                        class="block text-sm font-medium text-gray-700 @error('duration') text-red-500 @enderror">Duration</label>
+                    <input type="text" inputmode="numeric" oninput="this.value = this.value.replace(/[^0-9]/g, '')"
+                        name="duration" id="duration" autocomplete="off"
+                        class="mt-1 focus:ring-blue-500 py-2 px-3 focus:border-blue-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
+                        placeholder="30">
+
+                    @error('duration')
+                        <span class="text-red-500 text-sm">{{ $message }}</span>
+                    @enderror
                 </div>
                 <div>
-                    <label for="icon" class="block text-sm font-medium text-gray-700">Icon</label>
+                    <label for="icon"
+                        class="block text-sm font-medium text-gray-700 @error('icon') border-red-500 @enderror">Icon</label>
                     <input type="file" name="icon" id="icon" autocomplete="off"
                         class="mt-1 focus:ring-blue-500 focus:border-blue-500 p-2 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+
+                    @error('icon')
+                        <span class="text-red-500 text-sm">{{ $message }}</span>
+                    @enderror
                 </div>
 
                 <div>
                     <label for="isBest" class="block text-sm font-medium text-gray-700">Is Best Plan</label>
-                    <select name="isBest" id="isBest" class="mt-1 focus:ring-blue-500 p-2 focus:border-blue-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                    <select name="isBest" id="isBest"
+                        class="mt-1 focus:ring-blue-500 p-2 focus:border-blue-500 block w-full @error('name_plan') border-red-500 @enderror shadow-sm sm:text-sm border-gray-300 rounded-md">
                         <option value="0">No</option>
                         <option value="1">Yes</option>
                     </select>
+
+                    @error('isBest')
+                        <span class="text-red-500 text-sm">{{ $message }}</span>
+                    @enderror
                 </div>
             </div>
             <div class="mt-4">

@@ -29,7 +29,7 @@
     <div class="flex gap-3">
         <div class="w-2/3 shadow-sm bg-white rounded-lg h-full">
             <div class="flex justify-between p-4 rounded-t-lg items-center">
-                <h2 class="text-lg font-semibold">Subscription Plan Details</h2>
+                <h2 class="text-2xl font-semibold">Subscription Plan Details</h2>
                 <a href="{{ route('subscription-plan.index') }}"
                     class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Back</a>
             </div>
@@ -62,7 +62,7 @@
 
         <div class="w-5/12 shadow-sm bg-white rounded-lg">
             <div class="flex justify-between p-4 rounded-t-lg items-center">
-                <h2 class="text-lg font-semibold">Features</h2>
+                <h2 class="text-2xl font-semibold">Features</h2>
                 <a href="{{ route('subscription-plan.features', $plan->id) }}"
                     class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Add
                     Features</a>

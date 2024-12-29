@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Backsite;
 use App\Http\Controllers\Controller;
 use App\Models\Plan;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class PlanController extends Controller
 {
@@ -14,7 +15,6 @@ class PlanController extends Controller
     public function index()
     {
         $plans = Plan::with('features')->paginate(10);
-        dd($plans);
         return view('backsite.plan.index', compact('plans'));
     }
 
@@ -23,6 +23,11 @@ class PlanController extends Controller
      */
     public function create()
     {
+        $plan = Plan::count();
+        if ($plan > 2) {
+            return redirect()->route('subscription-plan.index')->with('error', 'You can only create 3 plans');
+        }
+
         return view('backsite.plan.create');
     }
 
@@ -35,7 +40,6 @@ class PlanController extends Controller
             'icon' => 'required|image|mimes:jpeg,png,jpg,gif,svg,webp|max:2048',
             'name_plan' => 'required|string|max:255',
             'description' => 'required|string',
-            'price' => 'required|numeric',
             'duration' => 'required|numeric',
         ]);
 
@@ -49,8 +53,9 @@ class PlanController extends Controller
         $plan = Plan::create([
             'icon' => $iconName,
             'name_plan' => $request->name_plan,
+            'slug' => Str::slug($request->name_plan),
             'description' => $request->description,
-            'price' => $request->price,
+            'price' => $request->price ?? 0,
             'duration' => $request->duration,
             'isBest' => $request->isBest,
         ]);
@@ -104,7 +109,8 @@ class PlanController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $plan = Plan::findOrFail($id);
+        return view('backsite.plan.edit', compact('plan'));
     }
 
     /**
@@ -112,7 +118,36 @@ class PlanController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $request->validate([
+            'icon' => 'image|mimes:jpeg,png,jpg,gif,svg,webp|max:2048',
+            'name_plan' => 'required|string|max:255',
+            'description' => 'required|string',
+            'duration' => 'required|numeric',
+            'isBest' => 'required|boolean',
+        ]);
+
+        $plan = Plan::findOrFail($id);
+
+        $icon = $request->file('icon');
+
+        $data = [
+            'name_plan' => $request->name_plan,
+            'slug' => Str::slug($request->name_plan),
+            'description' => $request->description,
+            'price' => $request->price ?? 0,
+            'duration' => $request->duration,
+            'isBest' => $request->isBest,
+        ];
+
+        if ($icon) {
+            $iconName = $icon->hashName();
+            $icon->storeAs('subscription_plan/icons', $iconName, 'public');
+            $data['icon'] = $iconName;
+        }
+
+        $plan->update($data);
+
+        return redirect()->route('subscription-plan.index')->with('success', 'Plan updated successfully');
     }
 
     /**

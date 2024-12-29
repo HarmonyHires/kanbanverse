@@ -102,7 +102,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::tXCXfCsochPFjbI0',
+            '_route' => 'generated::3DhHO4FqN0xILSNI',
           ),
           1 => NULL,
           2 => 
@@ -271,6 +271,26 @@ app('router')->setCompiledRoutes(
           0 => 
           array (
             '_route' => 'subscription-plan.create',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      '/backsite/subscribe' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'subscribe',
           ),
           1 => NULL,
           2 => 
@@ -663,7 +683,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::tXCXfCsochPFjbI0' => 
+    'generated::3DhHO4FqN0xILSNI' => 
     array (
       'methods' => 
       array (
@@ -686,7 +706,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::tXCXfCsochPFjbI0',
+        'as' => 'generated::3DhHO4FqN0xILSNI',
       ),
       'fallback' => false,
       'defaults' => 
@@ -1284,6 +1304,44 @@ app('router')->setCompiledRoutes(
         array (
         ),
         'as' => 'subscription-plan.delete-feature',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'subscribe' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'backsite/subscribe',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth',
+        ),
+        'uses' => 'App\\Http\\Controllers\\Backsite\\SubscribeController@detailOrder',
+        'controller' => 'App\\Http\\Controllers\\Backsite\\SubscribeController@detailOrder',
+        'namespace' => NULL,
+        'prefix' => '/backsite',
+        'where' => 
+        array (
+        ),
+        'as' => 'subscribe',
       ),
       'fallback' => false,
       'defaults' => 

@@ -20,3 +20,12 @@ yarn-error.log
 package-lock.json
 composer.lock
 public/cleopatra/
+
+# Ignore Laravel cache files
+/bootstrap/cache/*
+/storage/framework/cache/*
+/storage/framework/sessions/*
+/storage/framework/views/*
+/storage/framework/testing/*
+/storage/logs/*
+/storage/app/public/*

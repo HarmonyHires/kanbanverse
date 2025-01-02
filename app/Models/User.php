@@ -43,4 +43,19 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+    public function orders()
+    {
+        return $this->hasMany(Order::class);
+    }
+
+    public function hasActiveSubscription()
+    {
+        return $this->orders()->where('status', 'paid')->exists();
+    }
+
+    public function subscription()
+    {
+        return $this->orders()->where('status', 'paid')->first();
+    }
 }

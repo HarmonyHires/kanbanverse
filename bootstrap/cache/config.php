@@ -6,7 +6,7 @@
     'debug' => true,
     'url' => 'http://localhost',
     'asset_url' => NULL,
-    'timezone' => 'UTC',
+    'timezone' => 'Asia/Jakarta',
     'locale' => 'en',
     'fallback_locale' => 'en',
     'faker_locale' => 'en_US',

@@ -24,6 +24,11 @@ class Plan extends Model
         return $this->hasMany(PlanFeature::class);
     }
 
+    public function orders()
+    {
+        return $this->hasMany(Order::class);
+    }
+
     public function getDurationAttribute($value)
     {
         return $value . ' Days';
@@ -31,7 +36,12 @@ class Plan extends Model
 
     public function getPriceAttribute($value)
     {
-        return 'Rp ' . number_format($value, 0, ',', '.');
+        return '$' . number_format($value, 0, ',', '.');
+    }
+
+    public function getPriceNumberAttribute()
+    {
+        return $this->attributes['price'];
     }
 
     public function getIconAttribute($value)

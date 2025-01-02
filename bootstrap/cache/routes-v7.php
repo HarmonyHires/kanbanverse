@@ -102,7 +102,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::3DhHO4FqN0xILSNI',
+            '_route' => 'generated::wlekZTe2RN4nSfUu',
           ),
           1 => NULL,
           2 => 
@@ -284,7 +284,27 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      '/backsite/subscribe' => 
+      '/backsite/order' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'order.index',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      '/subscribe' => 
       array (
         0 => 
         array (
@@ -297,6 +317,25 @@ app('router')->setCompiledRoutes(
           array (
             'GET' => 0,
             'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      '/order' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'subscribe.order',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'POST' => 0,
           ),
           3 => NULL,
           4 => false,
@@ -365,7 +404,7 @@ app('router')->setCompiledRoutes(
     ),
     2 => 
     array (
-      0 => '{^(?|/backsite/subscription\\-plan/([^/]++)(?|(*:47)|/(?|edit(*:62)|features(?|(*:80)|/([^/]++)(*:96)))|(*:105)))/?$}sDu',
+      0 => '{^(?|/backsite/subscription\\-plan/([^/]++)(?|(*:47)|/(?|edit(*:62)|features(?|(*:80)|/([^/]++)(*:96)))|(*:105))|/order/pay/([^/]++)(?|(*:136))|/(.*)(*:150))/?$}sDu',
     ),
     3 => 
     array (
@@ -521,7 +560,72 @@ app('router')->setCompiledRoutes(
           5 => true,
           6 => NULL,
         ),
-        2 => 
+      ),
+      136 => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'subscribe.payments',
+          ),
+          1 => 
+          array (
+            0 => 'order_id',
+          ),
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => true,
+          6 => NULL,
+        ),
+        1 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'subscribe.pay',
+          ),
+          1 => 
+          array (
+            0 => 'order_id',
+          ),
+          2 => 
+          array (
+            'POST' => 0,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => true,
+          6 => NULL,
+        ),
+      ),
+      150 => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'generated::IRCITSdSXtCAtxz9',
+          ),
+          1 => 
+          array (
+            0 => 'fallbackPlaceholder',
+          ),
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => true,
+          6 => NULL,
+        ),
+        1 => 
         array (
           0 => NULL,
           1 => NULL,
@@ -683,7 +787,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::3DhHO4FqN0xILSNI' => 
+    'generated::wlekZTe2RN4nSfUu' => 
     array (
       'methods' => 
       array (
@@ -700,13 +804,13 @@ app('router')->setCompiledRoutes(
         ),
         'uses' => 'O:55:"Laravel\\SerializableClosure\\UnsignedSerializableClosure":1:{s:12:"serializable";O:46:"Laravel\\SerializableClosure\\Serializers\\Native":5:{s:3:"use";a:0:{}s:8:"function";s:77:"function (\\Illuminate\\Http\\Request $request) {
     return $request->user();
-}";s:5:"scope";s:37:"Illuminate\\Routing\\RouteFileRegistrar";s:4:"this";N;s:4:"self";s:32:"00000000000005410000000000000000";}}',
+}";s:5:"scope";s:37:"Illuminate\\Routing\\RouteFileRegistrar";s:4:"this";N;s:4:"self";s:32:"00000000000005490000000000000000";}}',
         'namespace' => NULL,
         'prefix' => 'api',
         'where' => 
         array (
         ),
-        'as' => 'generated::3DhHO4FqN0xILSNI',
+        'as' => 'generated::wlekZTe2RN4nSfUu',
       ),
       'fallback' => false,
       'defaults' => 
@@ -1319,6 +1423,44 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
+    'order.index' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'backsite/order',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth',
+        ),
+        'uses' => 'App\\Http\\Controllers\\Backsite\\OrderController@index',
+        'controller' => 'App\\Http\\Controllers\\Backsite\\OrderController@index',
+        'namespace' => NULL,
+        'prefix' => '/backsite',
+        'where' => 
+        array (
+        ),
+        'as' => 'order.index',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
     'subscribe' => 
     array (
       'methods' => 
@@ -1326,7 +1468,7 @@ app('router')->setCompiledRoutes(
         0 => 'GET',
         1 => 'HEAD',
       ),
-      'uri' => 'backsite/subscribe',
+      'uri' => 'subscribe',
       'action' => 
       array (
         'middleware' => 
@@ -1337,11 +1479,125 @@ app('router')->setCompiledRoutes(
         'uses' => 'App\\Http\\Controllers\\Backsite\\SubscribeController@detailOrder',
         'controller' => 'App\\Http\\Controllers\\Backsite\\SubscribeController@detailOrder',
         'namespace' => NULL,
-        'prefix' => '/backsite',
+        'prefix' => '',
         'where' => 
         array (
         ),
         'as' => 'subscribe',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'subscribe.order' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'POST',
+      ),
+      'uri' => 'order',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth',
+        ),
+        'uses' => 'App\\Http\\Controllers\\Backsite\\SubscribeController@order',
+        'controller' => 'App\\Http\\Controllers\\Backsite\\SubscribeController@order',
+        'namespace' => NULL,
+        'prefix' => '',
+        'where' => 
+        array (
+        ),
+        'as' => 'subscribe.order',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'subscribe.payments' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'order/pay/{order_id}',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth',
+          2 => 'App\\Http\\Middleware\\CheckOrderAccess',
+        ),
+        'uses' => 'App\\Http\\Controllers\\Backsite\\SubscribeController@payments',
+        'controller' => 'App\\Http\\Controllers\\Backsite\\SubscribeController@payments',
+        'namespace' => NULL,
+        'prefix' => '',
+        'where' => 
+        array (
+        ),
+        'as' => 'subscribe.payments',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'subscribe.pay' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'POST',
+      ),
+      'uri' => 'order/pay/{order_id}',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth',
+          2 => 'App\\Http\\Middleware\\CheckOrderAccess',
+        ),
+        'uses' => 'App\\Http\\Controllers\\Backsite\\SubscribeController@pay',
+        'controller' => 'App\\Http\\Controllers\\Backsite\\SubscribeController@pay',
+        'namespace' => NULL,
+        'prefix' => '',
+        'where' => 
+        array (
+        ),
+        'as' => 'subscribe.pay',
       ),
       'fallback' => false,
       'defaults' => 
@@ -1459,6 +1715,45 @@ app('router')->setCompiledRoutes(
       ),
       'wheres' => 
       array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'generated::IRCITSdSXtCAtxz9' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => '{fallbackPlaceholder}',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+        ),
+        'uses' => 'O:55:"Laravel\\SerializableClosure\\UnsignedSerializableClosure":1:{s:12:"serializable";O:46:"Laravel\\SerializableClosure\\Serializers\\Native":5:{s:3:"use";a:0:{}s:8:"function";s:54:"function () {
+    return \\redirect()->route(\'home\');
+}";s:5:"scope";s:37:"Illuminate\\Routing\\RouteFileRegistrar";s:4:"this";N;s:4:"self";s:32:"00000000000009200000000000000000";}}',
+        'namespace' => NULL,
+        'prefix' => '',
+        'where' => 
+        array (
+        ),
+        'as' => 'generated::IRCITSdSXtCAtxz9',
+      ),
+      'fallback' => true,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+        'fallbackPlaceholder' => '.*',
       ),
       'bindingFields' => 
       array (

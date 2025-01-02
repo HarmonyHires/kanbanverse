@@ -88,16 +88,24 @@
                         </ul>
 
                         <div class="flex justify-between items-center gap-3 mt-4">
-                            <a class="px-10 py-3 border rounded-md text-sm font-medium text-white
+                            @guest
+                                <a class="px-10 py-3 border rounded-md text-sm font-medium text-white
                                        hover:bg-white hover:text-black transition duration-300"
-                                href="#">
-                                Sign In
-                            </a>
-                            <a class="px-10 py-3 border rounded-md text-sm font-medium text-black bg-white
+                                    href="{{ route('login') }}">
+                                    Login
+                                </a>
+                                <a class="px-10 py-3 border rounded-md text-sm font-medium text-black bg-white
                                        hover:bg-transparent hover:text-white"
-                                href="#">
-                                Sign Up
-                            </a>
+                                    href="{{ route('register') }}">
+                                    Register
+                                </a>
+                            @else
+                                <a class="px-10 py-3 border rounded-md text-sm font-medium text-white
+                                       hover:bg-white hover:text-black transition duration-300"
+                                    href="{{ route('dashboard') }}">
+                                    Dashboard
+                                </a>
+                            @endguest
                         </div>
                     </div>
                 </div>
@@ -267,12 +275,14 @@
                                     </div>
                                 @endforeach
 
-                                <button type="submit" class="bg-navy hover:scale-105 w-full mt-6 transition duration-300 text-white text-center py-3 flex mx-auto gap-3 items-center align-middle justify-center rounded font-medium text-sm"><img
+                                <button type="submit"
+                                    class="bg-navy hover:scale-105 w-full mt-6 transition duration-300 text-white text-center py-3 flex mx-auto gap-3 items-center align-middle justify-center rounded font-medium text-sm"><img
                                         src="{{ asset('images/star_pricing.webp') }}" alt="">Choose Plan</button>
                             </div>
                         </form>
                     @else
-                        <form action="{{ route('subscribe') }}" target="_blank" class="bg-white border border-gray-200 p-8 w-80">
+                        <form action="{{ route('subscribe') }}" target="_blank"
+                            class="bg-white border border-gray-200 p-8 w-80">
                             <input type="hidden" name="type" value="{{ $plan->slug }}">
 
                             <img src="{{ $plan->icon }}" alt="{{ $plan->name_plan }}">
@@ -296,7 +306,9 @@
                                 </div>
                             @endforeach
 
-                            <button type="submit" class="bg-navy w-full text-white hover:scale-105 mt-6 transition duration-300 text-center py-3 flex mx-auto gap-3 items-center align-middle justify-center rounded font-medium text-sm">Choose Plan</button>
+                            <button type="submit"
+                                class="bg-navy w-full text-white hover:scale-105 mt-6 transition duration-300 text-center py-3 flex mx-auto gap-3 items-center align-middle justify-center rounded font-medium text-sm">Choose
+                                Plan</button>
                         </form>
                     @endif
                 @empty

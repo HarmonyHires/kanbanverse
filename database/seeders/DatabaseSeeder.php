@@ -18,5 +18,31 @@ class DatabaseSeeder extends Seeder
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
         // ]);
+        \App\Models\Plan::factory()->create([
+            'name_plan' => 'Starter Plan',
+            'slug' => 'starter-plan',
+            'description' => 'Perfect for individuals or small teams getting started with task management',
+            'price' => 0,
+            'duration' => 30,
+            'icon' => 'https://imgur.com/g9XZpUd',
+        ]);
+
+        \App\Models\Plan::factory()->create([
+            'name_plan' => 'Pro Plan',
+            'slug' => 'pro-plan',
+            'description' => 'Helping your teams growing and that need advanced features and flexibilty',
+            'price' => 30.00,
+            'duration' => 30,
+            'icon' => 'https://imgur.com/g9XZpUd',
+        ]);
+
+        \App\Models\Plan::factory()->create([
+            'name_plan' => 'Enterprise Plan',
+            'slug' => 'enterprise-plan',
+            'description' => 'Best for large teams and enterprises with multple projects and complex workflows',
+            'price' => 50.00,
+            'duration' => 30,
+            'icon' => 'https://imgur.com/g9XZpUd',
+        ]);
     }
 }

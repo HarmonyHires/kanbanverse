@@ -131,17 +131,17 @@
         <div
             class="container px-4 flex gap-5 mx-auto justify-center mt-[-60px] relative mb-12 flex-col lg:flex-row md:flex-col">
             <div class="flex gap-5 bg-white shadow-md rounded-md px-8 py-7 items-center">
-                <img class="w-10" src="{{ asset('images/feature_task_icon.webp') }}" alt="feature_task_icon">
+                <span class="icon-[iconamoon--file-check-fill] text-7xl text-primary"></span>
                 <div>
                     <h5 class="font-semibold lg:text-xl">Smart Task Prioritization</h5>
-                    <p class="text-sm text-gray-600">Automatically rank and highlight tasks across projects</p>
+                    <p class="text-sm text-base-content">Automatically rank and highlight tasks across projects</p>
                 </div>
             </div>
             <div class="flex gap-5 bg-white shadow-md rounded-md px-8 py-7 items-center">
                 <img class="w-12" src="{{ asset('images/feature_team_icon.webp') }}" alt="feature_team_icon">
                 <div>
                     <h5 class="font-semibold lg:text-xl">Team Performance Insights</h5>
-                    <p class="text-sm text-gray-600">Gain a clear view of your team's productivity with real-time
+                    <p class="text-sm text-base-content">Gain a clear view of your team's productivity with real-time
                         analytics.</p>
                 </div>
             </div>
@@ -149,7 +149,7 @@
                 <img class="w-12" src="{{ asset('images/feature_colab_icon.webp') }}" alt="feature_colab_icon">
                 <div>
                     <h5 class="font-semibold lg:text-xl">Real-Time Collaboration</h5>
-                    <p class="text-sm text-gray-600">Gain a clear view of your team's productivity with real-time
+                    <p class="text-sm text-base-content">Gain a clear view of your team's productivity with real-time
                         analytics.</p>
                 </div>
             </div>

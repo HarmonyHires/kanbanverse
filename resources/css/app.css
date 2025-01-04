@@ -1,17 +1,48 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Poppins", serif;
-    scroll-behavior: smooth;
+@import "tailwindcss";
+@config "./tailwind.config.js";
+@plugin "daisyui" {
+    themes: light;
+    include: ;
+    exclude: ;
+    prefix: ;
+    logs: true;
 }
 
-body {
-    background-color: #f5f9f9;
+@plugin "daisyui/theme" {
+    name: "light";
+    default: true;
+    color-scheme: "light";
+    --color-base-100: oklch(100% 0 0);
+    --color-base-200: oklch(93% 0 0);
+    --color-base-300: oklch(86% 0 0);
+    --color-base-content: oklch(35.519% 0.032 262.988);
+    --color-primary: #2a8e9e;
+    --color-primary-content: oklch(98% 0 0);
+    --color-secondary: oklch(51% 0.096 186.391);
+    --color-secondary-content: oklch(98% 0 0);
+    --color-accent: oklch(72.772% 0.149 33.2);
+    --color-accent-content: oklch(14% 0 0);
+    --color-neutral: oklch(27% 0.006 286.033);
+    --color-neutral-content: oklch(98% 0 0);
+    --color-info: oklch(71% 0.143 215.221);
+    --color-info-content: oklch(14% 0 0);
+    --color-success: oklch(64.8% 0.15 160);
+    --color-success-content: oklch(14% 0 0);
+    --color-warning: oklch(84.71% 0.199 83.87);
+    --color-warning-content: oklch(14% 0 0);
+    --color-error: oklch(71.76% 0.221 22.18);
+    --color-error-content: oklch(14% 0 0);
+    --radius-selector: 0.5rem;
+    --radius-field: 0.5rem;
+    --radius-box: 0.5rem;
+    --size-selector: 0.25rem;
+    --size-field: 0.25rem;
+    --border: 1px;
+    --depth: 1;
+    --noise: 0;
+}
+
+* {
+    font-family: "Poppins", serif;
 }

@@ -9,26 +9,19 @@
             {{-- NAVBAR --}}
             <header class="container mx-auto px-4 py-3 flex justify-between items-center flex-row">
                 <img class="object-contain w-52" src="{{ asset('images/logo.png') }}" alt="logo_kanbanverse">
-                <button id="mobile-menu-toggle" class="text-white focus:outline-none mt-3 block lg:hidden">
-                    <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7">
-                        </path>
-                    </svg>
-                </button>
 
                 <nav class="mt-4 hidden lg:block">
                     <ul class="flex flex-col lg:flex-row justify-between gap-4 lg:gap-14 items-center text-white">
-                        <li class="hover:text-gray-300">
+                        <li class="btn btn-ghost hover:bg-neutral-50/75 tracking-wider">
                             <a href="/">Home</a>
                         </li>
-                        <li class="hover:text-gray-300">
+                        <li class="btn btn-ghost hover:bg-neutral-50/75 tracking-wider">
                             <a href="#features">Features</a>
                         </li>
-                        <li class="hover:text-gray-300">
+                        <li class="btn btn-ghost hover:bg-neutral-50/75 tracking-wider">
                             <a href="#pricing">Pricing</a>
                         </li>
-                        <li class="hover:text-gray-300">
+                        <li class="btn btn-ghost hover:bg-neutral-50/75 tracking-wider">
                             <a href="#contact-us">Contact Us</a>
                         </li>
                     </ul>
@@ -37,19 +30,16 @@
 
                 <div class="justify-between items-center gap-3 mt-4 hidden lg:flex">
                     @guest
-                        <a class="px-10 py-3 border rounded-md text-sm font-medium text-white
-                    hover:bg-white hover:text-black transition duration-300"
+                        <a class="btn btn-outline tracking-wider not-[&:hover]:bg-neutral-900/5 not-[&:hover]:text-neutral-100 not-[&:hover]:border-neutral-50"
                             href="{{ route('login') }}">
                             Login
                         </a>
-                        <a class="px-10 py-3 border rounded-md text-sm font-medium text-black bg-white
-                hover:bg-transparent hover:text-white"
+                        <a class="btn btn-outline tracking-wider not-[&:hover]:bg-neutral-900/5 not-[&:hover]:text-neutral-100 not-[&:hover]:border-neutral-50"
                             href="{{ route('register') }}">
                             Register
                         </a>
                     @else
-                        <a class="px-10 py-3 border rounded-md text-sm font-medium text-white
-                    hover:bg-white hover:text-black transition duration-300"
+                        <a class="btn btn-outline tracking-wider not-[&:hover]:bg-neutral-900/5 not-[&:hover]:text-neutral-100 not-[&:hover]:border-neutral-50"
                             href="{{ route('dashboard') }}">
                             Dashboard
                         </a>
@@ -57,56 +47,50 @@
                 </div>
 
                 {{-- Mobile Navigation --}}
-                <div id="mobile-menu" class="hidden lg:hidden absolute z-10 top-0 left-0 w-full h-full bg-navy">
-                    <div class="flex flex-col justify-center items-center h-full">
-                        <button id="mobile-menu-close"
-                            class="text-white focus:outline-none mt-3 block lg:hidden absolute top-3 right-3">
-                            <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M6 18L18 6M6 6l12 12"></path>
-                            </svg>
-                        </button>
-                        <ul class="flex flex-col justify-between gap-4 items-center text-white">
-                            <li class="hover:text
-                                        -gray-300">
+                <div class="drawer lg:hidden w-fit">
+                    <input id="mobile-drawer" type="checkbox" class="drawer-toggle" />
+                    <div class="drawer-content flex">
+                        <label for="mobile-drawer" class="btn btn-outline tracking-wider [&:hover]:bg-neutral-900/25 text-neutral-100 border-0 shadow-none drawer-button">
+                            <span class="icon-[hugeicons--menu-05] text-3xl"></span>
+                        </label>
+                    </div>
+                    <div class="drawer-side z-[999]">
+                        <label for="mobile-drawer" aria-label="close sidebar" class="drawer-overlay"></label>
+                        <ul class="menu bg-base-200 text-base-content min-h-full w-80 p-4">
+                            <li class="hover:text-gray-300">
                                 <a href="/">Home</a>
                             </li>
-                            <li class="hover:text
-                                        -gray-300">
+                            <li class="hover:text-gray-300">
                                 <a href="#features">Features</a>
                             </li>
 
-                            <li class="hover:text
-                                        -gray-300">
+                            <li class="hover:text-gray-300">
                                 <a href="#pricing">Pricing</a>
                             </li>
-                            <li class="hover:text
-                                        -gray-300">
+                            <li class="hover:text-gray-300">
                                 <a href="#contact-us">Contact Us</a>
                             </li>
+                            <div class="flex justify-between items-center gap-3 mt-4">
+                                @guest
+                                    <a class="px-10 py-3 border rounded-md text-sm font-medium text-white
+                                           hover:bg-white hover:text-black transition duration-300"
+                                        href="{{ route('login') }}">
+                                        Login
+                                    </a>
+                                    <a class="px-10 py-3 border rounded-md text-sm font-medium text-black bg-white
+                                           hover:bg-transparent hover:text-white"
+                                        href="{{ route('register') }}">
+                                        Register
+                                    </a>
+                                @else
+                                    <a class="px-10 py-3 border rounded-md text-sm font-medium text-white
+                                           hover:bg-white hover:text-black transition duration-300"
+                                        href="{{ route('dashboard') }}">
+                                        Dashboard
+                                    </a>
+                                @endguest
+                            </div>
                         </ul>
-
-                        <div class="flex justify-between items-center gap-3 mt-4">
-                            @guest
-                                <a class="px-10 py-3 border rounded-md text-sm font-medium text-white
-                                       hover:bg-white hover:text-black transition duration-300"
-                                    href="{{ route('login') }}">
-                                    Login
-                                </a>
-                                <a class="px-10 py-3 border rounded-md text-sm font-medium text-black bg-white
-                                       hover:bg-transparent hover:text-white"
-                                    href="{{ route('register') }}">
-                                    Register
-                                </a>
-                            @else
-                                <a class="px-10 py-3 border rounded-md text-sm font-medium text-white
-                                       hover:bg-white hover:text-black transition duration-300"
-                                    href="{{ route('dashboard') }}">
-                                    Dashboard
-                                </a>
-                            @endguest
-                        </div>
                     </div>
                 </div>
             </header>
@@ -119,8 +103,7 @@
                 <p class="text-gray-300 lg:text-xl mb-5 text-center">Boost your team's productivity with Kanban, the
                     ultimate visual
                     tool for organizing tasks and streamlining workflows.</p>
-                <a class="lg:px-8 lg:py-4 px-4 py-3 border rounded-md text-black text-sm font-medium bg-white hover:bg-transparent hover:text-white"
-                    href="#pricing">Get Started</a>
+                <a role="button" class="btn btn-primary md:btn-lg" href="#pricing">Get Started</a>
             </div>
 
         </div>
@@ -131,14 +114,14 @@
         <div
             class="container px-4 flex gap-5 mx-auto justify-center mt-[-60px] relative mb-12 flex-col lg:flex-row md:flex-col">
             <div class="flex gap-5 bg-white shadow-md rounded-md px-8 py-7 items-center">
-                <span class="icon-[iconamoon--file-check-fill] text-7xl text-primary"></span>
+                <span class="icon-[iconamoon--file-check-fill] text-8xl text-secondary"></span>
                 <div>
                     <h5 class="font-semibold lg:text-xl">Smart Task Prioritization</h5>
                     <p class="text-sm text-base-content">Automatically rank and highlight tasks across projects</p>
                 </div>
             </div>
             <div class="flex gap-5 bg-white shadow-md rounded-md px-8 py-7 items-center">
-                <img class="w-12" src="{{ asset('images/feature_team_icon.webp') }}" alt="feature_team_icon">
+                <span class="icon-[fluent--people-team-24-filled] text-8xl text-secondary"></span>
                 <div>
                     <h5 class="font-semibold lg:text-xl">Team Performance Insights</h5>
                     <p class="text-sm text-base-content">Gain a clear view of your team's productivity with real-time
@@ -146,7 +129,7 @@
                 </div>
             </div>
             <div class="flex gap-5 bg-white shadow-md rounded-md px-8 py-7 items-center">
-                <img class="w-12" src="{{ asset('images/feature_colab_icon.webp') }}" alt="feature_colab_icon">
+                <span class="icon-[carbon--collaborate] text-8xl text-secondary"></span>
                 <div>
                     <h5 class="font-semibold lg:text-xl">Real-Time Collaboration</h5>
                     <p class="text-sm text-base-content">Gain a clear view of your team's productivity with real-time

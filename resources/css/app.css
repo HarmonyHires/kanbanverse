@@ -3,9 +3,6 @@
 @config "./tailwind.config.js";
 @plugin "daisyui" {
     themes: light;
-    include: ;
-    exclude: ;
-    prefix: ;
     logs: true;
 }
 
@@ -43,6 +40,11 @@
     --noise: 0;
 }
 
-* {
-    font-family: "Poppins", serif;
+@layer utilities {
+    html {
+        @apply scroll-smooth;
+    }
+    * {
+        font-family: "Poppins", serif;
+    }
 }

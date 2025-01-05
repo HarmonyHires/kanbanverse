@@ -7,40 +7,40 @@
         <div class="bg-hero-overlay">
 
             {{-- NAVBAR --}}
-            <header class="container mx-auto px-4 py-3 flex justify-between items-center flex-row">
-                <img class="object-contain w-52" src="{{ asset('images/logo.png') }}" alt="logo_kanbanverse">
+            <header class="container mx-auto px-4 py-3 flex justify-between items-center flex-row gap-16">
+                <img class="object-contain w-42" src="{{ asset('images/logo.png') }}" alt="logo_kanbanverse">
 
-                <nav class="mt-4 hidden lg:block">
-                    <ul class="flex flex-col lg:flex-row justify-between gap-4 lg:gap-14 items-center text-white">
-                        <li class="btn btn-ghost hover:bg-neutral-50/75 tracking-wider">
-                            <a href="/">Home</a>
-                        </li>
-                        <li class="btn btn-ghost hover:bg-neutral-50/75 tracking-wider">
-                            <a href="#features">Features</a>
-                        </li>
-                        <li class="btn btn-ghost hover:bg-neutral-50/75 tracking-wider">
-                            <a href="#pricing">Pricing</a>
-                        </li>
-                        <li class="btn btn-ghost hover:bg-neutral-50/75 tracking-wider">
-                            <a href="#contact-us">Contact Us</a>
-                        </li>
-                    </ul>
-                </nav>
+                <ul role="navigation"
+                    class="mt-4 hidden lg:flex grow flex-col lg:flex-row justify-center gap-4 items-center text-white">
+                    <li class="grow max-w-36">
+                        <a class="text-base btn btn-ghost hover:bg-base-300/25 text-base-100 px-6 py-4 w-full border-0 tracking-wide"
+                            href="/">Home</a>
+                    </li>
+                    <li class="grow max-w-36">
+                        <a class="text-base btn btn-ghost hover:bg-base-300/25 text-base-100 px-6 py-4 w-full border-0 tracking-wide"
+                            href="#features">Features</a>
+                    </li>
+                    <li class="grow max-w-36">
+                        <a class="text-base btn btn-ghost hover:bg-base-300/25 text-base-100 px-6 py-4 w-full border-0 tracking-wide"
+                            href="#pricing">Pricing</a>
+                    </li>
+                    <li class="grow max-w-36">
+                        <a class="text-base btn btn-ghost hover:bg-base-300/25 text-base-100 px-6 py-4 w-full border-0 tracking-wide"
+                            href="#contact-us">Contact Us</a>
+                    </li>
+                </ul>
 
 
                 <div class="justify-between items-center gap-3 mt-4 hidden lg:flex">
                     @guest
-                        <a class="btn btn-outline tracking-wider not-[&:hover]:bg-neutral-900/5 not-[&:hover]:text-neutral-100 not-[&:hover]:border-neutral-50"
-                            href="{{ route('login') }}">
+                        <a class="text-base btn btn-primary px-6 py-4 tracking-wide" href="{{ route('login') }}">
                             Login
                         </a>
-                        <a class="btn btn-outline tracking-wider not-[&:hover]:bg-neutral-900/5 not-[&:hover]:text-neutral-100 not-[&:hover]:border-neutral-50"
-                            href="{{ route('register') }}">
+                        <a class="text-base btn btn-primary px-6 py-4 tracking-wide" href="{{ route('register') }}">
                             Register
                         </a>
                     @else
-                        <a class="btn btn-outline tracking-wider not-[&:hover]:bg-neutral-900/5 not-[&:hover]:text-neutral-100 not-[&:hover]:border-neutral-50"
-                            href="{{ route('dashboard') }}">
+                        <a class="text-base btn btn-primary px-6 py-4 tracking-wide" href="{{ route('dashboard') }}">
                             Dashboard
                         </a>
                     @endguest
@@ -50,46 +50,47 @@
                 <div class="drawer lg:hidden w-fit">
                     <input id="mobile-drawer" type="checkbox" class="drawer-toggle" />
                     <div class="drawer-content flex">
-                        <label for="mobile-drawer" class="btn btn-outline tracking-wider [&:hover]:bg-neutral-900/25 text-neutral-100 border-0 shadow-none drawer-button">
+                        <label for="mobile-drawer"
+                            class="btn btn-outline tracking-wider [&:hover]:bg-neutral-900/25 text-neutral-100 border-0 shadow-none drawer-button">
                             <span class="icon-[hugeicons--menu-05] text-3xl"></span>
                         </label>
                     </div>
-                    <div class="drawer-side z-[999]">
+                    <div class="drawer-side bg-base-100 z-[999]">
                         <label for="mobile-drawer" aria-label="close sidebar" class="drawer-overlay"></label>
-                        <ul class="menu bg-base-200 text-base-content min-h-full w-80 p-4">
-                            <li class="hover:text-gray-300">
-                                <a href="/">Home</a>
+                        <ul class="menu bg-base-200 text-base-content min-h-full w-80 p-4 gap-2 tracking-wide">
+                            <li class="">
+                                <img class="w-52 menu-title pb-4" src="{{ asset('images/logo_black.png') }}" alt="">
                             </li>
-                            <li class="hover:text-gray-300">
-                                <a href="#features">Features</a>
+                            <li class="">
+                                <a role="button" class="btn justify-start border-0" href="/">Home</a>
                             </li>
-
-                            <li class="hover:text-gray-300">
-                                <a href="#pricing">Pricing</a>
+                            <li class="">
+                                <a role="button" class="btn justify-start border-0" href="#features">Features</a>
                             </li>
-                            <li class="hover:text-gray-300">
-                                <a href="#contact-us">Contact Us</a>
+                            <li class="">
+                                <a role="button" class="btn justify-start border-0" href="#pricing">Pricing</a>
                             </li>
-                            <div class="flex justify-between items-center gap-3 mt-4">
+                            <li class="">
+                                <a role="button" class="btn justify-start border-0" href="#contact-us">Contact
+                                    Us</a>
+                            </li>
+                            <li class="">
                                 @guest
-                                    <a class="px-10 py-3 border rounded-md text-sm font-medium text-white
-                                           hover:bg-white hover:text-black transition duration-300"
+                                    <a class="btn btn-primary bg-[var(--btn-bg)]/90 border-0 justify-start"
                                         href="{{ route('login') }}">
                                         Login
                                     </a>
-                                    <a class="px-10 py-3 border rounded-md text-sm font-medium text-black bg-white
-                                           hover:bg-transparent hover:text-white"
+                                    <a class="btn btn-primary bg-[var(--btn-bg)]/90 border-0 justify-start"
                                         href="{{ route('register') }}">
                                         Register
                                     </a>
                                 @else
-                                    <a class="px-10 py-3 border rounded-md text-sm font-medium text-white
-                                           hover:bg-white hover:text-black transition duration-300"
+                                    <a class="btn btn-primary bg-[var(--btn-bg)]/90 border-0 justify-start"
                                         href="{{ route('dashboard') }}">
                                         Dashboard
                                     </a>
                                 @endguest
-                            </div>
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -97,9 +98,8 @@
 
             {{-- HERO --}}
             <div class="container mx-auto px-4 flex justify-center flex-col h-3/4 items-center gap-4">
-                <h1 class="text-white font-bold text-3xl lg:text-7xl text-center tracking-wide leading-tight">Time
-                    Management Made
-                    Easy Experience the Kanban <br> Advantage!</h1>
+                <h1 class="text-white font-bold text-3xl lg:text-6xl text-center tracking-wide leading-tight">Time
+                    Management Made Easy Experience the Kanban <p>Advantage!</p></h1>
                 <p class="text-gray-300 lg:text-xl mb-5 text-center">Boost your team's productivity with Kanban, the
                     ultimate visual
                     tool for organizing tasks and streamlining workflows.</p>

@@ -6,7 +6,6 @@ use App\Http\Controllers\Backsite\OrderController;
 use App\Http\Controllers\Backsite\PlanController;
 use App\Http\Controllers\SubscribeController;
 use App\Http\Controllers\HomeController;
-use App\Http\Controllers\MidtransController;
 use App\Http\Middleware\CheckOrderAccess;
 use Illuminate\Support\Facades\Route;
 
@@ -60,9 +59,6 @@ Route::middleware('auth')->group(function () {
 
     Route::post('logout', [LoginController::class, 'logout'])->name('logout');
 });
-
-Route::get('/midtrans/test', [MidtransController::class, 'index'])->name('midtrans.test');
-Route::post('/midtrans/payment', [MidtransController::class, 'createTransaction'])->name('midtrans.payment');
 
 Route::fallback(function () {
     return redirect()->route('home');

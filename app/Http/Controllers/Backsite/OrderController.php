@@ -13,7 +13,7 @@ class OrderController extends Controller
      */
     public function index()
     {
-        $orders = Order::with('plan', 'user')->latest()->paginate(10);
+        $orders = Order::with('plan', 'user')->latest()->paginate(15);
         return view('backsite.order.index', compact('orders'));
     }
 

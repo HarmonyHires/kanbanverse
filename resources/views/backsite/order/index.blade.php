@@ -58,7 +58,7 @@
         </table>
 
         <div class="mt-4">
-            {{ $orders->links('pagination::bootstrap-5') }}
+            {{ $orders->links('backsite.layouts.partials.pagination') }}
         </div>
     </div>
 @endsection

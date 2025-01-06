@@ -4,7 +4,7 @@ use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Backsite\OrderController;
 use App\Http\Controllers\Backsite\PlanController;
-use App\Http\Controllers\Backsite\SubscribeController;
+use App\Http\Controllers\SubscribeController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\MidtransController;
 use App\Http\Middleware\CheckOrderAccess;
@@ -50,7 +50,12 @@ Route::middleware('auth')->group(function () {
 
     Route::middleware(CheckOrderAccess::class)->group(function () {
         Route::get('order/pay/{order_id}', [SubscribeController::class, 'payments'])->name('subscribe.payments');
-        Route::post('order/pay/{order_id}', [SubscribeController::class, 'pay'])->name('subscribe.pay');
+        Route::post('order/pay/{order_id}', [SubscribeController::class, 'createTransaction'])->name('subscribe.pay');
+
+        Route::get('order/success', [SubscribeController::class, 'midtransWebhook'])->name('subscribe.success');
+        Route::get('order/failed/{order_id}', [SubscribeController::class, 'midtransError'])->name('subscribe.failed');
+
+        Route::get('order/{order_id}/status', [SubscribeController::class, 'status'])->name('subscribe.status');
     });
 
     Route::post('logout', [LoginController::class, 'logout'])->name('logout');

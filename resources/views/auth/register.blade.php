@@ -21,7 +21,7 @@
                 <div class="swiper progress-slide-carousel swiper-container relative">
                     <div class="swiper-wrapper">
                         <div class="swiper-slide">
-                            <div class="bg-navy relative mx-8 p-8 rounded-xl">
+                            <div class="bg-primary relative mx-8 p-8 rounded-xl">
                                 <h5 class="text-white text-xl mb-3 font-semibold">Ez Project Bosqu</h5>
                                 <p class="mb-4 text-gray-100 font-light">Before using Kanban, I was often overwhelmed by the
                                     number of
@@ -38,7 +38,7 @@
                             </div>
                         </div>
                         <div class="swiper-slide">
-                            <div class="bg-navy relative mx-8 p-8 rounded-xl">
+                            <div class="bg-primary relative mx-8 p-8 rounded-xl">
                                 <h5 class="text-white text-xl mb-3 font-semibold">WOW Amazing Project Saya Kelarr</h5>
                                 <p class="mb-4 text-gray-100 font-light">Before using Kanban, I was often overwhelmed by the
                                     number of
@@ -55,7 +55,7 @@
                             </div>
                         </div>
                         <div class="swiper-slide">
-                            <div class="bg-navy relative mx-8 p-8 rounded-xl">
+                            <div class="bg-primary relative mx-8 p-8 rounded-xl">
                                 <h5 class="text-white text-xl mb-3 font-semibold">I Love This Thing</h5>
                                 <p class="mb-4 text-gray-100 font-light">Before using Kanban, I was often overwhelmed by the
                                     number of
@@ -72,7 +72,7 @@
                             </div>
                         </div>
                         <div class="swiper-slide">
-                            <div class="bg-navy relative mx-8 p-8 rounded-xl">
+                            <div class="bg-primary relative mx-8 p-8 rounded-xl">
                                 <h5 class="text-white text-xl mb-3 font-semibold">I Love This Thing</h5>
                                 <p class="mb-4 text-gray-100 font-light">Before using Kanban, I was often overwhelmed by the
                                     number of

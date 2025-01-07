@@ -1,45 +1,15 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Poppins", serif;
-    scroll-behavior: smooth;
-}
-
-body {
-    background-color: #f5f9f9;
-}
-
-.includes-bg-hero {
-    background-image: url("../images/bg_hero.webp");
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    height: 100vh;
-    width: 100%;
-    overflow: hidden;
-    position: relative;
-}
-
-.bg-hero-overlay {
-    background-color: rgba(0, 0, 0, 0.5);
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-}
-
-.swiper-wrapper {
-    width: 100%;
-    height: max-content !important;
-    padding-bottom: 52px !important;
-    -webkit-transition-timing-function: linear !important;
-    transition-timing-function: linear !important;
-    position: relative;
-}
-.swiper-pagination-progressbar .swiper-pagination-progressbar-fill {
-    background: #ffff !important;
+@import "/resources/css/app.css";
+@layer utilities {
+    .includes-bg-hero {
+        @apply bg-[url("../images/bg_hero.webp")] bg-center bg-cover bg-no-repeat h-screen w-full overflow-hidden relative max-h-[calc(96rem_/_16_*_9)];
+    }
+    .bg-hero-overlay {
+        @apply bg-black/50 h-full w-full absolute top-0 left-0;
+    }
+    .swiper-wrapper {
+        @apply h-full w-full pb-14 ease-linear relative;
+    }
+    .swiper-pagination-progressbar .swiper-pagination-progressbar-fill {
+        @apply bg-neutral-50;
+    }
 }

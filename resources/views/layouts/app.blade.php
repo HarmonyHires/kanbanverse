@@ -5,8 +5,9 @@
     @include('backsite.layouts.partials.meta')
 
     <title>KanbanVerse | @yield('title')</title>
-    @vite('resources/css/app.css')
-    <link rel="stylesheet" href="{{ asset('styles/home.css') }}">
+    @vite(['public/styles/home.css'])
+    {{-- @vite('public/styles/home.css') --}}
+    {{-- <link rel="stylesheet" href="{{ asset('styles/home.css') }}"> --}}
 </head>
 
 <body>

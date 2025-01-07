@@ -3,8 +3,7 @@
 @section('title', 'Order Placed')
 
 @section('content')
-    <form method="POST" action="{{ route('subscribe.pay', $order->order_id) }}"
-        class="flex flex-col items-center justify-center h-[75vh]">
+    <div class="flex flex-col items-center justify-center h-[75vh]">
         @csrf
         <img class="w-1/4" src="{{ asset('images/img/order_confirmed.svg') }}" alt="Order Confirmed">
         <h5 class="text-lg font-medium mt-6">YEAAYYYY ! Your Order Successfully, <span class="text-navy">Pay Now!</span></h5>
@@ -28,11 +27,11 @@
                 <span class="block sm:inline">Your order has been cancelled.</span>
             </div>
         @else
-            <button type="submit"
-                class="bg-primary text-white font-medium px-4 py-4 w-full max-w-lg rounded-b-lg text-center">Pay
+            <button onclick="makePayment()"
+                class="bg-navy text-white font-medium px-4 py-4 w-full max-w-lg rounded-b-lg text-center">Pay
                 Now</button>
         @endif
-    </form>
+    </div>
 @endsection
 
 @section('scripts')
@@ -62,5 +61,37 @@
         } else {
             document.getElementById('countdown').innerHTML = 'Order Expired!';
         }
+
+        function makePayment() {
+            fetch("{{ route('subscribe.pay', $order->order_id) }}", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                        "X-CSRF-TOKEN": "{{ csrf_token() }}"
+                    }
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.snapToken) {
+                        window.snap.pay(data.snapToken, {
+                            onSuccess: function(result) {
+                                const payload = encodeURIComponent(JSON.stringify(result));
+                                window.location.href = "{{ route('subscribe.success') }}" + "?payload=" +
+                                    payload;
+                            },
+                            onError: function(result) {
+                                window.location.href = "{{ route('subscribe.failed', $order->order_id) }}";
+                            }
+                        });
+
+                    } else {
+                        window.location.href = "{{ route('subscribe.failed', $order->order_id) }}";
+                    }
+                })
+                .catch(error => {
+                    window.location.href = "{{ route('subscribe.failed', $order->order_id) }}";
+                });
+        }
     </script>
+    <script src="https://app.sandbox.midtrans.com/snap/snap.js" data-client-key="YOUR_CLIENT_KEY"></script>
 @endsection()

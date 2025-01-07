@@ -3,6 +3,8 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+
+use App\Models\Plan;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -18,7 +20,7 @@ class DatabaseSeeder extends Seeder
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
         // ]);
-        \App\Models\Plan::factory()->create([
+        Plan::factory()->create([
             'name_plan' => 'Starter Plan',
             'slug' => 'starter-plan',
             'description' => 'Perfect for individuals or small teams getting started with task management',
@@ -27,7 +29,7 @@ class DatabaseSeeder extends Seeder
             'icon' => 'https://imgur.com/g9XZpUd',
         ]);
 
-        \App\Models\Plan::factory()->create([
+        Plan::factory()->create([
             'name_plan' => 'Pro Plan',
             'slug' => 'pro-plan',
             'description' => 'Helping your teams growing and that need advanced features and flexibilty',
@@ -37,7 +39,7 @@ class DatabaseSeeder extends Seeder
             'isBest' => 'true'
         ]);
 
-        \App\Models\Plan::factory()->create([
+        Plan::factory()->create([
             'name_plan' => 'Enterprise Plan',
             'slug' => 'enterprise-plan',
             'description' => 'Best for large teams and enterprises with multple projects and complex workflows',

@@ -29,7 +29,7 @@
             </div>
         @else
             <button type="submit"
-                class="bg-navy text-white font-medium px-4 py-4 w-full max-w-lg rounded-b-lg text-center">Pay
+                class="bg-primary text-white font-medium px-4 py-4 w-full max-w-lg rounded-b-lg text-center">Pay
                 Now</button>
         @endif
     </form>

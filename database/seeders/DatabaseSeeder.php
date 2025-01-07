@@ -34,6 +34,7 @@ class DatabaseSeeder extends Seeder
             'price' => 30.00,
             'duration' => 30,
             'icon' => 'https://imgur.com/g9XZpUd',
+            'isBest' => 'true'
         ]);
 
         \App\Models\Plan::factory()->create([

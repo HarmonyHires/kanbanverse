@@ -37,6 +37,34 @@
             Order
         </a>
 
+        <a href="{{ route('transaction.index') }}"
+            class="mb-3 flex gap-2 items-center @if (request()->routeIs('transaction.*')) text-teal-600 @endif capitalize font-medium text-sm hover:text-teal-600 transition ease-in-out duration-500">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24">
+                <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                    stroke-width="1.5" color="currentColor">
+                    <path
+                        d="M16.977 19.5A9 9 0 0 0 10 3.223M16.977 19.5V16m0 3.5H20.5M7 4.516a9 9 0 0 0 7 16.261M7 4.516V8m0-3.484H3.5" />
+                    <path
+                        d="M10.438 14.667V9.333m1.562 0V8m0 8v-1.333M10.438 12h3.124m0 0c.518 0 .938.448.938 1v.667c0 .552-.42 1-.937 1H9.5M13.563 12c.517 0 .937-.448.937-1v-.667c0-.552-.42-1-.937-1H9.5" />
+                </g>
+            </svg>
+            Transaction
+        </a>
+
+        <p class="uppercase text-xs text-gray-600 mb-4 mt-4 tracking-wider">Users Management</p>
+
+        <a href="{{ route('users.index') }}"
+            class="mb-3 @if (request()->routeIs('users.*')) text-teal-600 @endif capitalize font-medium text-sm hover:text-teal-600 transition ease-in-out duration-500">
+            <i class="fad fa-users-class text-xs mr-2"></i>
+            Users
+        </a>
+
+        <a href="{{ route('roles.index') }}"
+            class="mb-3 @if (request()->routeIs('order.*')) text-teal-600 @endif capitalize font-medium text-sm hover:text-teal-600 transition ease-in-out duration-500">
+            <i class="fad fa-solid fa-user-lock text-xs mr-2"></i>
+            Roles & Permission
+        </a>
+
         <p class="uppercase text-xs text-gray-600 mb-4 mt-4 tracking-wider">Settings</p>
 
         <!-- link -->
@@ -46,6 +74,7 @@
             Activity Logs
         </a>
         <!-- end link -->
+
 
         <hr class="mb-6">
         <a href="{{ route('home') }}"

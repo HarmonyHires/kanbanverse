@@ -78,6 +78,6 @@
     </div>
 
     <div class="mt-4">
-        {{ $plans->links('pagination::simple-bootstrap-5') }}
+        {{ $plans->links('backsite.layouts.partials.pagination') }}
     </div>
 @endsection

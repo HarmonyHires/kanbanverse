@@ -66,6 +66,8 @@
 
     <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
     <script src="{{ asset('scripts/back.js') }}"></script>
+
+    @yield('scripts')
 </body>
 
 </html>

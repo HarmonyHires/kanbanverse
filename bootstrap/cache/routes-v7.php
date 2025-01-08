@@ -102,7 +102,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::PxCiFNHrgOhuSXCi',
+            '_route' => 'generated::xyKGOCi5FI9kBO9r',
           ),
           1 => NULL,
           2 => 
@@ -304,6 +304,213 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
+      '/backsite/transaction' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'transaction.index',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      '/backsite/roles' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'roles.index',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+        1 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'roles.store',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'POST' => 0,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      '/backsite/roles/create' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'roles.create',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      '/backsite/permissions' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'permissions.index',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+        1 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'permissions.store',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'POST' => 0,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      '/backsite/permissions/create' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'permissions.create',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      '/backsite/users' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'users.index',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+        1 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'users.store',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'POST' => 0,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      '/backsite/users/create' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'users.create',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      '/backsite/update-role' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'updateRole',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'POST' => 0,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
       '/subscribe' => 
       array (
         0 => 
@@ -382,53 +589,14 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      '/midtrans/test' => 
-      array (
-        0 => 
-        array (
-          0 => 
-          array (
-            '_route' => 'midtrans.test',
-          ),
-          1 => NULL,
-          2 => 
-          array (
-            'GET' => 0,
-            'HEAD' => 1,
-          ),
-          3 => NULL,
-          4 => false,
-          5 => false,
-          6 => NULL,
-        ),
-      ),
-      '/midtrans/payment' => 
-      array (
-        0 => 
-        array (
-          0 => 
-          array (
-            '_route' => 'midtrans.payment',
-          ),
-          1 => NULL,
-          2 => 
-          array (
-            'POST' => 0,
-          ),
-          3 => NULL,
-          4 => false,
-          5 => false,
-          6 => NULL,
-        ),
-      ),
     ),
     2 => 
     array (
-      0 => '{^(?|/backsite/subscription\\-plan/([^/]++)(?|(*:47)|/(?|edit(*:62)|features(?|(*:80)|/([^/]++)(*:96)))|(*:105))|/order/(?|pay/([^/]++)(?|(*:139))|failed/([^/]++)(*:163)|([^/]++)/status(*:186))|/(.*)(*:200))/?$}sDu',
+      0 => '{^(?|/backsite/(?|subscription\\-plan/([^/]++)(?|(*:50)|/(?|edit(*:65)|features(?|(*:83)|/([^/]++)(*:99)))|(*:108))|roles/([^/]++)(?|(*:134)|/edit(*:147)|(*:155))|permissions/([^/]++)(?|(*:187)|/edit(*:200)|(*:208))|users/([^/]++)(?|(*:234)|/edit(*:247)|(*:255)))|/order/(?|pay/([^/]++)(?|(*:290))|failed/([^/]++)(*:314)|([^/]++)/status(*:337))|/(.*)(*:351))/?$}sDu',
     ),
     3 => 
     array (
-      47 => 
+      50 => 
       array (
         0 => 
         array (
@@ -451,7 +619,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      62 => 
+      65 => 
       array (
         0 => 
         array (
@@ -474,7 +642,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      80 => 
+      83 => 
       array (
         0 => 
         array (
@@ -516,7 +684,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      96 => 
+      99 => 
       array (
         0 => 
         array (
@@ -539,7 +707,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      105 => 
+      108 => 
       array (
         0 => 
         array (
@@ -581,7 +749,271 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      139 => 
+      134 => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'roles.show',
+          ),
+          1 => 
+          array (
+            0 => 'role',
+          ),
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => true,
+          6 => NULL,
+        ),
+      ),
+      147 => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'roles.edit',
+          ),
+          1 => 
+          array (
+            0 => 'role',
+          ),
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      155 => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'roles.update',
+          ),
+          1 => 
+          array (
+            0 => 'role',
+          ),
+          2 => 
+          array (
+            'PUT' => 0,
+            'PATCH' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => true,
+          6 => NULL,
+        ),
+        1 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'roles.destroy',
+          ),
+          1 => 
+          array (
+            0 => 'role',
+          ),
+          2 => 
+          array (
+            'DELETE' => 0,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => true,
+          6 => NULL,
+        ),
+      ),
+      187 => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'permissions.show',
+          ),
+          1 => 
+          array (
+            0 => 'permission',
+          ),
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => true,
+          6 => NULL,
+        ),
+      ),
+      200 => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'permissions.edit',
+          ),
+          1 => 
+          array (
+            0 => 'permission',
+          ),
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      208 => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'permissions.update',
+          ),
+          1 => 
+          array (
+            0 => 'permission',
+          ),
+          2 => 
+          array (
+            'PUT' => 0,
+            'PATCH' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => true,
+          6 => NULL,
+        ),
+        1 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'permissions.destroy',
+          ),
+          1 => 
+          array (
+            0 => 'permission',
+          ),
+          2 => 
+          array (
+            'DELETE' => 0,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => true,
+          6 => NULL,
+        ),
+      ),
+      234 => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'users.show',
+          ),
+          1 => 
+          array (
+            0 => 'user',
+          ),
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => true,
+          6 => NULL,
+        ),
+      ),
+      247 => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'users.edit',
+          ),
+          1 => 
+          array (
+            0 => 'user',
+          ),
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      255 => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'users.update',
+          ),
+          1 => 
+          array (
+            0 => 'user',
+          ),
+          2 => 
+          array (
+            'PUT' => 0,
+            'PATCH' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => true,
+          6 => NULL,
+        ),
+        1 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'users.destroy',
+          ),
+          1 => 
+          array (
+            0 => 'user',
+          ),
+          2 => 
+          array (
+            'DELETE' => 0,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => true,
+          6 => NULL,
+        ),
+      ),
+      290 => 
       array (
         0 => 
         array (
@@ -623,7 +1055,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      163 => 
+      314 => 
       array (
         0 => 
         array (
@@ -646,7 +1078,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      186 => 
+      337 => 
       array (
         0 => 
         array (
@@ -669,13 +1101,13 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      200 => 
+      351 => 
       array (
         0 => 
         array (
           0 => 
           array (
-            '_route' => 'generated::ywttXDhcf8tYrRHl',
+            '_route' => 'generated::Q1KigqR2VsSWZUZw',
           ),
           1 => 
           array (
@@ -853,7 +1285,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::PxCiFNHrgOhuSXCi' => 
+    'generated::xyKGOCi5FI9kBO9r' => 
     array (
       'methods' => 
       array (
@@ -876,7 +1308,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::PxCiFNHrgOhuSXCi',
+        'as' => 'generated::xyKGOCi5FI9kBO9r',
       ),
       'fallback' => false,
       'defaults' => 
@@ -1527,6 +1959,873 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
+    'transaction.index' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'backsite/transaction',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth',
+        ),
+        'uses' => 'App\\Http\\Controllers\\Backsite\\TransactionController@index',
+        'controller' => 'App\\Http\\Controllers\\Backsite\\TransactionController@index',
+        'namespace' => NULL,
+        'prefix' => '/backsite',
+        'where' => 
+        array (
+        ),
+        'as' => 'transaction.index',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'roles.index' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'backsite/roles',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth',
+        ),
+        'as' => 'roles.index',
+        'uses' => 'App\\Http\\Controllers\\Backsite\\RoleController@index',
+        'controller' => 'App\\Http\\Controllers\\Backsite\\RoleController@index',
+        'namespace' => NULL,
+        'prefix' => '/backsite',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'roles.create' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'backsite/roles/create',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth',
+        ),
+        'as' => 'roles.create',
+        'uses' => 'App\\Http\\Controllers\\Backsite\\RoleController@create',
+        'controller' => 'App\\Http\\Controllers\\Backsite\\RoleController@create',
+        'namespace' => NULL,
+        'prefix' => '/backsite',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'roles.store' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'POST',
+      ),
+      'uri' => 'backsite/roles',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth',
+        ),
+        'as' => 'roles.store',
+        'uses' => 'App\\Http\\Controllers\\Backsite\\RoleController@store',
+        'controller' => 'App\\Http\\Controllers\\Backsite\\RoleController@store',
+        'namespace' => NULL,
+        'prefix' => '/backsite',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'roles.show' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'backsite/roles/{role}',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth',
+        ),
+        'as' => 'roles.show',
+        'uses' => 'App\\Http\\Controllers\\Backsite\\RoleController@show',
+        'controller' => 'App\\Http\\Controllers\\Backsite\\RoleController@show',
+        'namespace' => NULL,
+        'prefix' => '/backsite',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'roles.edit' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'backsite/roles/{role}/edit',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth',
+        ),
+        'as' => 'roles.edit',
+        'uses' => 'App\\Http\\Controllers\\Backsite\\RoleController@edit',
+        'controller' => 'App\\Http\\Controllers\\Backsite\\RoleController@edit',
+        'namespace' => NULL,
+        'prefix' => '/backsite',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'roles.update' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'PUT',
+        1 => 'PATCH',
+      ),
+      'uri' => 'backsite/roles/{role}',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth',
+        ),
+        'as' => 'roles.update',
+        'uses' => 'App\\Http\\Controllers\\Backsite\\RoleController@update',
+        'controller' => 'App\\Http\\Controllers\\Backsite\\RoleController@update',
+        'namespace' => NULL,
+        'prefix' => '/backsite',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'roles.destroy' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'DELETE',
+      ),
+      'uri' => 'backsite/roles/{role}',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth',
+        ),
+        'as' => 'roles.destroy',
+        'uses' => 'App\\Http\\Controllers\\Backsite\\RoleController@destroy',
+        'controller' => 'App\\Http\\Controllers\\Backsite\\RoleController@destroy',
+        'namespace' => NULL,
+        'prefix' => '/backsite',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'permissions.index' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'backsite/permissions',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth',
+        ),
+        'as' => 'permissions.index',
+        'uses' => 'App\\Http\\Controllers\\Backsite\\PermissionController@index',
+        'controller' => 'App\\Http\\Controllers\\Backsite\\PermissionController@index',
+        'namespace' => NULL,
+        'prefix' => '/backsite',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'permissions.create' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'backsite/permissions/create',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth',
+        ),
+        'as' => 'permissions.create',
+        'uses' => 'App\\Http\\Controllers\\Backsite\\PermissionController@create',
+        'controller' => 'App\\Http\\Controllers\\Backsite\\PermissionController@create',
+        'namespace' => NULL,
+        'prefix' => '/backsite',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'permissions.store' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'POST',
+      ),
+      'uri' => 'backsite/permissions',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth',
+        ),
+        'as' => 'permissions.store',
+        'uses' => 'App\\Http\\Controllers\\Backsite\\PermissionController@store',
+        'controller' => 'App\\Http\\Controllers\\Backsite\\PermissionController@store',
+        'namespace' => NULL,
+        'prefix' => '/backsite',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'permissions.show' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'backsite/permissions/{permission}',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth',
+        ),
+        'as' => 'permissions.show',
+        'uses' => 'App\\Http\\Controllers\\Backsite\\PermissionController@show',
+        'controller' => 'App\\Http\\Controllers\\Backsite\\PermissionController@show',
+        'namespace' => NULL,
+        'prefix' => '/backsite',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'permissions.edit' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'backsite/permissions/{permission}/edit',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth',
+        ),
+        'as' => 'permissions.edit',
+        'uses' => 'App\\Http\\Controllers\\Backsite\\PermissionController@edit',
+        'controller' => 'App\\Http\\Controllers\\Backsite\\PermissionController@edit',
+        'namespace' => NULL,
+        'prefix' => '/backsite',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'permissions.update' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'PUT',
+        1 => 'PATCH',
+      ),
+      'uri' => 'backsite/permissions/{permission}',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth',
+        ),
+        'as' => 'permissions.update',
+        'uses' => 'App\\Http\\Controllers\\Backsite\\PermissionController@update',
+        'controller' => 'App\\Http\\Controllers\\Backsite\\PermissionController@update',
+        'namespace' => NULL,
+        'prefix' => '/backsite',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'permissions.destroy' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'DELETE',
+      ),
+      'uri' => 'backsite/permissions/{permission}',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth',
+        ),
+        'as' => 'permissions.destroy',
+        'uses' => 'App\\Http\\Controllers\\Backsite\\PermissionController@destroy',
+        'controller' => 'App\\Http\\Controllers\\Backsite\\PermissionController@destroy',
+        'namespace' => NULL,
+        'prefix' => '/backsite',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'users.index' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'backsite/users',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth',
+        ),
+        'as' => 'users.index',
+        'uses' => 'App\\Http\\Controllers\\Backsite\\UserController@index',
+        'controller' => 'App\\Http\\Controllers\\Backsite\\UserController@index',
+        'namespace' => NULL,
+        'prefix' => '/backsite',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'users.create' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'backsite/users/create',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth',
+        ),
+        'as' => 'users.create',
+        'uses' => 'App\\Http\\Controllers\\Backsite\\UserController@create',
+        'controller' => 'App\\Http\\Controllers\\Backsite\\UserController@create',
+        'namespace' => NULL,
+        'prefix' => '/backsite',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'users.store' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'POST',
+      ),
+      'uri' => 'backsite/users',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth',
+        ),
+        'as' => 'users.store',
+        'uses' => 'App\\Http\\Controllers\\Backsite\\UserController@store',
+        'controller' => 'App\\Http\\Controllers\\Backsite\\UserController@store',
+        'namespace' => NULL,
+        'prefix' => '/backsite',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'users.show' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'backsite/users/{user}',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth',
+        ),
+        'as' => 'users.show',
+        'uses' => 'App\\Http\\Controllers\\Backsite\\UserController@show',
+        'controller' => 'App\\Http\\Controllers\\Backsite\\UserController@show',
+        'namespace' => NULL,
+        'prefix' => '/backsite',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'users.edit' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'backsite/users/{user}/edit',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth',
+        ),
+        'as' => 'users.edit',
+        'uses' => 'App\\Http\\Controllers\\Backsite\\UserController@edit',
+        'controller' => 'App\\Http\\Controllers\\Backsite\\UserController@edit',
+        'namespace' => NULL,
+        'prefix' => '/backsite',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'users.update' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'PUT',
+        1 => 'PATCH',
+      ),
+      'uri' => 'backsite/users/{user}',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth',
+        ),
+        'as' => 'users.update',
+        'uses' => 'App\\Http\\Controllers\\Backsite\\UserController@update',
+        'controller' => 'App\\Http\\Controllers\\Backsite\\UserController@update',
+        'namespace' => NULL,
+        'prefix' => '/backsite',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'users.destroy' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'DELETE',
+      ),
+      'uri' => 'backsite/users/{user}',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth',
+        ),
+        'as' => 'users.destroy',
+        'uses' => 'App\\Http\\Controllers\\Backsite\\UserController@destroy',
+        'controller' => 'App\\Http\\Controllers\\Backsite\\UserController@destroy',
+        'namespace' => NULL,
+        'prefix' => '/backsite',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'updateRole' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'POST',
+      ),
+      'uri' => 'backsite/update-role',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth',
+        ),
+        'uses' => 'App\\Http\\Controllers\\Backsite\\RoleController@updateRole',
+        'controller' => 'App\\Http\\Controllers\\Backsite\\RoleController@updateRole',
+        'namespace' => NULL,
+        'prefix' => '/backsite',
+        'where' => 
+        array (
+        ),
+        'as' => 'updateRole',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
     'subscribe' => 
     array (
       'methods' => 
@@ -1833,80 +3132,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'midtrans.test' => 
-    array (
-      'methods' => 
-      array (
-        0 => 'GET',
-        1 => 'HEAD',
-      ),
-      'uri' => 'midtrans/test',
-      'action' => 
-      array (
-        'middleware' => 
-        array (
-          0 => 'web',
-        ),
-        'uses' => 'App\\Http\\Controllers\\MidtransController@index',
-        'controller' => 'App\\Http\\Controllers\\MidtransController@index',
-        'namespace' => NULL,
-        'prefix' => '',
-        'where' => 
-        array (
-        ),
-        'as' => 'midtrans.test',
-      ),
-      'fallback' => false,
-      'defaults' => 
-      array (
-      ),
-      'wheres' => 
-      array (
-      ),
-      'bindingFields' => 
-      array (
-      ),
-      'lockSeconds' => NULL,
-      'waitSeconds' => NULL,
-      'withTrashed' => false,
-    ),
-    'midtrans.payment' => 
-    array (
-      'methods' => 
-      array (
-        0 => 'POST',
-      ),
-      'uri' => 'midtrans/payment',
-      'action' => 
-      array (
-        'middleware' => 
-        array (
-          0 => 'web',
-        ),
-        'uses' => 'App\\Http\\Controllers\\MidtransController@createTransaction',
-        'controller' => 'App\\Http\\Controllers\\MidtransController@createTransaction',
-        'namespace' => NULL,
-        'prefix' => '',
-        'where' => 
-        array (
-        ),
-        'as' => 'midtrans.payment',
-      ),
-      'fallback' => false,
-      'defaults' => 
-      array (
-      ),
-      'wheres' => 
-      array (
-      ),
-      'bindingFields' => 
-      array (
-      ),
-      'lockSeconds' => NULL,
-      'waitSeconds' => NULL,
-      'withTrashed' => false,
-    ),
-    'generated::ywttXDhcf8tYrRHl' => 
+    'generated::Q1KigqR2VsSWZUZw' => 
     array (
       'methods' => 
       array (
@@ -1922,13 +3148,13 @@ app('router')->setCompiledRoutes(
         ),
         'uses' => 'O:55:"Laravel\\SerializableClosure\\UnsignedSerializableClosure":1:{s:12:"serializable";O:46:"Laravel\\SerializableClosure\\Serializers\\Native":5:{s:3:"use";a:0:{}s:8:"function";s:54:"function () {
     return \\redirect()->route(\'home\');
-}";s:5:"scope";s:37:"Illuminate\\Routing\\RouteFileRegistrar";s:4:"this";N;s:4:"self";s:32:"00000000000009200000000000000000";}}',
+}";s:5:"scope";s:37:"Illuminate\\Routing\\RouteFileRegistrar";s:4:"this";N;s:4:"self";s:32:"000000000000054c0000000000000000";}}',
         'namespace' => NULL,
         'prefix' => '',
         'where' => 
         array (
         ),
-        'as' => 'generated::ywttXDhcf8tYrRHl',
+        'as' => 'generated::Q1KigqR2VsSWZUZw',
       ),
       'fallback' => true,
       'defaults' => 

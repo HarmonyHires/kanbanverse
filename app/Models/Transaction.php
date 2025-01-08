@@ -106,4 +106,29 @@ class Transaction extends Model
     {
         return ucfirst($value);
     }
+
+    public function isAccepted()
+    {
+        return $this->transaction_status === 'Settlement';
+    }
+
+    public function isPending()
+    {
+        return $this->transaction_status === 'pending';
+    }
+
+    public function isFailed()
+    {
+        return $this->transaction_status === 'deny';
+    }
+
+    public function isExpired()
+    {
+        return $this->transaction_status === 'expire';
+    }
+
+    public function isCancelled()
+    {
+        return $this->transaction_status === 'cancel';
+    }
 }

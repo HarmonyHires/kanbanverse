@@ -63,7 +63,7 @@
                     <label for="price" class="block text-sm font-medium text-gray-700">Price</label>
                     <input type="number" name="price" id="price" autocomplete="off"
                         class="mt-1 focus:ring-blue-500 py-2 px-3 @error('price') border-red-500 @enderror focus:border-blue-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
-                        placeholder="100" value="{{ (int) str_replace('Rp ', '', $plan->price) }}">
+                        placeholder="100" value="{{ $plan->price_number }}">
                     @error('price')
                         <span class="text-red-500 text-sm">{{ $message }}</span>
                     @enderror

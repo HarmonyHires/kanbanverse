@@ -259,9 +259,10 @@
                                 <img src="{{ $plan->icon }}" alt="{{ $plan->name_plan }}">
                                 <h5 class="text-md lg:text-xl mt-6 font-semibold mb-3">{{ $plan->name_plan }}</h5>
                                 <p class="text-gray-600 text-sm mb-3">{{ $plan->description }}</p>
+                                {{-- @dd($plan->price_number) --}}
                                 <h1 class="mb-4 font-bold text-2xl"><span
-                                        class="text-2xl">{{ $plan->price == 'Rp 0' ? 'FREE' : $plan->price }}</span>
-                                    @if ($plan->price != 'Rp 0')
+                                        class="text-2xl">{{ $plan->price_number == 0.00 ? 'FREE' : $plan->price }}</span>
+                                    @if ($plan->price_number != 0.00)
                                         <span class="text-gray-600 text-sm font-normal italic">/month</span>
                                     @endif
                                 </h1>
@@ -289,10 +290,9 @@
                             <h5 class="text-md lg:text-xl mt-6 font-semibold mb-3">
                                 {{ $plan->name_plan }}</h5>
                             <p class="text-gray-600 text-sm mb-3">{{ $plan->description }}</p>
-                            <h1 class="mb-4">
-                                <span
-                                    class="font-bold text-2xl">{{ $plan->price == 'Rp 0' ? 'FREE' : $plan->price }}</span>
-                                @if ($plan->price != 'Rp 0')
+                            <h1 class="mb-4 font-bold text-2xl"><span
+                                    class="text-2xl">{{ $plan->price_number == 0.00 ? 'FREE' : $plan->price }}</span>
+                                @if ($plan->price_number != 0.00)
                                     <span class="text-gray-600 text-sm font-normal italic">/month</span>
                                 @endif
                             </h1>

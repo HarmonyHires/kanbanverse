@@ -805,10 +805,6 @@ div.code-toolbar > .toolbar span:focus {
   text-decoration: none;
 }
 
-body, h1, h2, h3, h4, h5, h6, p, a {
-  text-transform: capitalize
-}
-
 p {
   letter-spacing: 0.05em;
   font-size: 0.875rem;

@@ -94,5 +94,6 @@
         }
     </script>
     {{-- <script src="https://app..midtrans.com/snap/snap.js" data-client-key="YOUR_CLIENT_KEY"></script> --}}
-    <script src="https://app.midtrans.com/snap/snap.js" data-client-key="YOUR_CLIENT_KEY"></script>
+    <script src="https://app.midtrans.com/snap/snap.js" data-client-key="{{ config('services.midtrans.client_key') }}">
+    </script>
 @endsection()

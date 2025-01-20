@@ -80,19 +80,15 @@
                                     payload;
                             },
                             onError: function(result) {
-                                console.error('Error:', result);
                                 window.location.href = "{{ route('subscribe.failed', $order->order_id) }}";
                             }
                         });
 
                     } else {
-                        console.log('Token not found');
-
                         window.location.href = "{{ route('subscribe.failed', $order->order_id) }}";
                     }
                 })
                 .catch(error => {
-                    console.error('Error:', error);
                     window.location.href = "{{ route('subscribe.failed', $order->order_id) }}";
                 });
         }

@@ -67,6 +67,7 @@ Route::middleware('auth')->group(function () {
         Route::get('order/pay/{order_id}', [SubscribeController::class, 'payments'])->name('subscribe.payments');
         Route::post('order/pay/{order_id}', [SubscribeController::class, 'createTransaction'])->name('subscribe.pay');
 
+        Route::get('midtrans/callback', [SubscribeController::class, 'midtransWebhook'])->name('subscribe.success');
         Route::get('order/failed/{order_id}', [SubscribeController::class, 'midtransError'])->name('subscribe.failed');
 
         Route::get('order/{order_id}/status', [SubscribeController::class, 'status'])->name('subscribe.status');
@@ -75,8 +76,6 @@ Route::middleware('auth')->group(function () {
 
     Route::post('logout', [LoginController::class, 'logout'])->name('logout');
 });
-
-Route::get('midtrans/callback', [SubscribeController::class, 'midtransWebhook'])->name('subscribe.success');
 
 Route::fallback(function () {
     return redirect()->route('home');

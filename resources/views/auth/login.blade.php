@@ -21,6 +21,13 @@
                     </div>
                 @endif
 
+                @if (session('error'))
+                    <div class="text-white
+                    bg-red-500 px-4 py-3 mb-6 rounded">
+                        {{ session('error') }}
+                    </div>
+                @endif
+
                 <div class="mb-6 w-full">
                     <label class="font-medium text-white mb-3" for="email">
                         Email

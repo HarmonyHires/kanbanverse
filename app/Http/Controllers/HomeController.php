@@ -12,8 +12,4 @@ class HomeController extends Controller
         $plans = Plan::with('features')->get();
         return view('home', compact('plans'));
     }
-
-    public function dashboard() {
-        return view('backsite.dashboard');
-    }
 }

@@ -29,3 +29,4 @@ public/cleopatra/
 /storage/framework/testing/*
 /storage/logs/*
 /storage/app/public/*
+*.sql

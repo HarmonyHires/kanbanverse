@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Hash;
 
 class RegisterController extends Controller
@@ -38,10 +39,15 @@ class RegisterController extends Controller
             // 't&c' => 'required|accepted',
         ]);
 
+        $uuid = Str::uuid()->toString();
+
         User::create([
             'name' => $request->first_name . ' ' . $request->last_name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
+            'identifier_prefix' => str_replace('-', '', $uuid),
+            'email_verified_at' => now(),
+            'status' => 'active',
         ]);
 
         return redirect()->route('login')->with('success', 'Your account has been created successfully.');

@@ -8,10 +8,12 @@ use App\Http\Controllers\Backsite\PlanController;
 use App\Http\Controllers\Backsite\RoleController;
 use App\Http\Controllers\Backsite\TransactionController;
 use App\Http\Controllers\Backsite\UserController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\SubscribeController;
 use App\Http\Controllers\HomeController;
 use App\Http\Middleware\CheckOrderAccess;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Cache;
 
 /*
 |--------------------------------------------------------------------------
@@ -39,9 +41,9 @@ Route::controller(RegisterController::class)->group(callback: function () {
 Route::middleware('auth')->group(function () {
 
     # SUPERADMIN PREFIX
-    Route::prefix('backsite')->group(function () {
-        Route::get('dashboard', [HomeController::class, 'dashboard'])->name('dashboard');
 
+    Route::prefix('backsite')->group(function () {
+        Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard');
         Route::resource('subscription-plan', PlanController::class);
         Route::get('subscription-plan/{id}/features', [PlanController::class, 'features'])->name('subscription-plan.features');
         Route::post('subscription-plan/{id}/features', [PlanController::class, 'storeFeatures'])->name('subscription-plan.store-features');
@@ -55,6 +57,8 @@ Route::middleware('auth')->group(function () {
         Route::resource('users', UserController::class);
         Route::post('/update-role', [RoleController::class, 'updateRole'])->name('updateRole');
     });
+
+    Route::get('workspace', [DashboardController::class, 'index'])->name('dashboard.client');
 
     Route::get('subscribe', [SubscribeController::class, 'detailOrder'])->name('subscribe');
     Route::post('order', [SubscribeController::class, 'order'])->name('subscribe.order');

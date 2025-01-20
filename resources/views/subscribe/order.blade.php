@@ -80,16 +80,20 @@
                                     payload;
                             },
                             onError: function(result) {
-                                window.location.href = "{{ route('subscribe.failed', $order->order_id) }}";
+                                console.error('Error:', result);
+                                // window.location.href = "{{ route('subscribe.failed', $order->order_id) }}";
                             }
                         });
 
                     } else {
-                        window.location.href = "{{ route('subscribe.failed', $order->order_id) }}";
+                        console.log('Token not found');
+
+                        // window.location.href = "{{ route('subscribe.failed', $order->order_id) }}";
                     }
                 })
                 .catch(error => {
-                    window.location.href = "{{ route('subscribe.failed', $order->order_id) }}";
+                    console.error('Error:', error);
+                    // window.location.href = "{{ route('subscribe.failed', $order->order_id) }}";
                 });
         }
     </script>

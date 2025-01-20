@@ -251,7 +251,7 @@
             <div class="flex justify-center mx-auto items-center gap-10 lg:gap-[150px] h-full flex-col lg:flex-row">
                 @forelse($plans as $plan)
                     @if ($plan->isBest == 1)
-                        <form method="GET" action="{{ route('subscribe') }}" class="scale-105" target="_blank">
+                        <form method="GET" action="{{ route('subscribe') }}" class="scale-105">
                             <input type="hidden" name="type" value="{{ $plan->slug }}">
 
                             <div class="text-center bg-navy w-80 rounded-t-lg text-white text-sm py-1">Best Value</div>
@@ -282,7 +282,7 @@
                             </div>
                         </form>
                     @else
-                        <form action="{{ route('subscribe') }}" target="_blank"
+                        <form action="{{ route('subscribe') }}"
                             class="bg-white border border-gray-200 p-8 w-80">
                             <input type="hidden" name="type" value="{{ $plan->slug }}">
 
